@@ -1,0 +1,10 @@
+{
+  "name": "jarvis-ramos-backend",
+  "private": true,
+  "type": "module",
+  "description": "Tareas automáticas del Jarvis (GitHub Actions): noticias, recordatorios push y sincronización de Classroom/Gmail",
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "firebase-admin": "^12.1.0"
+  }
+}

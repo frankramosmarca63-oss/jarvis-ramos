@@ -1,0 +1,20 @@
+{
+  "timezone": "America/Lima",
+  "news": {
+    "maxPerSection": 8,
+    "sections": {
+      "local":         { "title": "Tacna",          "query": "Tacna",                                   "days": 1 },
+      "nacional":      { "title": "Perú",           "feed": "top" },
+      "internacional": { "title": "Mundo",          "feed": "WORLD" },
+      "mineria":       { "title": "Minería",        "query": "minería Perú OR Southern Peru OR Toquepala OR Cuajone", "days": 2 },
+      "robotica":      { "title": "Robótica",       "query": "robótica OR robot humanoide OR aprendizaje por refuerzo", "days": 2 },
+      "tecnologia":    { "title": "Tecnología",     "feed": "TECHNOLOGY" },
+      "vibraciones":   { "title": "Vibraciones",    "query": "\"análisis de vibraciones\" OR \"mantenimiento predictivo\" OR \"vibration analysis\"", "days": 7 },
+      "proyectos":     { "title": "Mis proyectos",  "query": "turbofán OR \"GLP vehicular\" OR tribología OR \"lubricación industrial\" OR OBD2", "days": 7 }
+    }
+  },
+  "gmail": {
+    "query": "newer_than:3d -category:promotions -category:social",
+    "keywords": ["tarea", "entrega", "examen", "práctica", "practica", "informe", "trabajo", "exposición", "exposicion", "plazo", "fecha", "evaluación", "evaluacion", "classroom", "unidad", "laboratorio", "sílabo", "silabo"]
+  }
+}

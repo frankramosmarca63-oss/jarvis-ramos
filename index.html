@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#03080d">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>J.A.R.V.I.S. · Ramos</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/hud.css">
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="scanline" aria-hidden="true"></div>
+
+  <div id="boot" class="boot">
+    <div class="boot-ring"><span></span><span></span><span></span></div>
+    <div class="boot-text" id="bootText">INICIALIZANDO J.A.R.V.I.S.</div>
+  </div>
+
+  <header class="top">
+    <div class="brand">
+      <div class="brand-dot" id="cloudDot" title="Estado de la nube"></div>
+      <div>
+        <div class="brand-name">J.A.R.V.I.S.</div>
+        <div class="brand-sub" id="brandSub">SISTEMA PERSONAL · RAMOS</div>
+      </div>
+    </div>
+    <nav class="tabs" id="tabs" aria-label="Secciones">
+      <button data-view="inicio" class="on"><span class="ti">◉</span><span>INICIO</span></button>
+      <button data-view="hoy"><span class="ti">◎</span><span>HOY</span></button>
+      <button data-view="plan"><span class="ti">☰</span><span>PLAN</span></button>
+      <button data-view="cursos"><span class="ti">◈</span><span>CURSOS</span></button>
+      <button data-view="progreso"><span class="ti">▲</span><span>AVANCE</span></button>
+      <button data-view="ajustes"><span class="ti">⚙</span><span>AJUSTES</span></button>
+    </nav>
+    <div class="clock">
+      <div id="clockTime">--:--</div>
+      <div id="clockDate" class="muted">---</div>
+    </div>
+  </header>
+
+  <!-- ================= INICIO ================= -->
+  <main class="view layout" id="view-inicio">
+    <section class="panel span-all briefing">
+      <div class="corner tl"></div><div class="corner br"></div>
+      <div class="brief-row">
+        <button class="voice-orb" id="briefBtn" aria-label="Escuchar informe de Jarvis"><span></span><span></span><b>▶</b></button>
+        <div class="brief-txt">
+          <div class="tag-line"><span class="tag">JARVIS</span> <span id="briefState" class="muted small">Toca el núcleo para escuchar el informe</span></div>
+          <div id="greetText" class="greet-big">Buenos días, señor.</div>
+          <div id="briefSummary" class="muted"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel span-2">
+      <div class="corner tl"></div><div class="corner br"></div>
+      <div class="plan-head"><h2>NOTICIAS DEL DÍA</h2><span class="muted small" id="newsStamp"></span></div>
+      <div class="seg" id="newsTabs"></div>
+      <ol class="news" id="newsList"></ol>
+    </section>
+
+    <section class="panel">
+      <div class="corner tl"></div><div class="corner br"></div>
+      <h2>CONSEJOS DEL ASISTENTE</h2>
+      <ul class="tips" id="tipsList"></ul>
+      <h2 class="mt">PRÓXIMAS ENTREGAS</h2>
+      <ul class="mini-list" id="homePendings"></ul>
+      <h2 class="mt">EXÁMENES</h2>
+      <ul class="mini-list" id="homeExams"></ul>
+    </section>
+
+    <section class="panel span-all">
+      <div class="corner tl"></div><div class="corner br"></div>
+      <div class="plan-head"><h2>TENDENCIAS · CARRERA Y PROYECTOS</h2></div>
+      <div class="seg" id="trendTabs"></div>
+      <ol class="news" id="trendList"></ol>
+    </section>
+  </main>
+
+  <!-- ================= HOY ================= -->
+  <main class="view layout" id="view-hoy" hidden>
+    <section class="panel reactor-panel">
+      <div class="corner tl"></div><div class="corner br"></div>
+      <h2 id="reactorTitle">PRODUCTIVIDAD HOY</h2>
+      <div class="reactor-wrap">
+        <svg viewBox="0 0 220 220" class="reactor" aria-label="Productividad del día">
+          <defs>
+            <radialGradient id="core" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#e6fdff"/><stop offset="35%" stop-color="#4ff3ff"/><stop offset="100%" stop-color="#03323a" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <circle cx="110" cy="110" r="100" class="ring-bg"/>
+          <circle cx="110" cy="110" r="100" class="ring-val" id="ringMain" pathLength="100"/>
+          <circle cx="110" cy="110" r="84" class="ring-dash spin-slow"/>
+          <circle cx="110" cy="110" r="72" class="ring-bg thin"/>
+          <circle cx="110" cy="110" r="72" class="ring-val gold" id="ringPunct" pathLength="100"/>
+          <g class="spin-rev"><circle cx="110" cy="110" r="60" class="ring-seg"/></g>
+          <circle cx="110" cy="110" r="46" fill="url(#core)" id="coreGlow"/>
+          <text x="110" y="112" class="ring-num" id="pctText">0%</text>
+          <text x="110" y="134" class="ring-lbl">ÍNDICE</text>
+        </svg>
+      </div>
+      <div class="kpis">
+        <div><span class="k" id="kAvance">0%</span><span class="l">Avance</span></div>
+        <div><span class="k gold" id="kPunct">—</span><span class="l">Puntualidad</span></div>
+        <div><span class="k" id="kCount">0/0</span><span class="l">Tareas</span></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="corner tl"></div><div class="corner br"></div>
+      <h2>EN CURSO</h2>
+      <div id="nowBox" class="now-box"></div>
+      <h2 class="mt">SIGUIENTE</h2>
+      <div id="nextBox" class="next-box"></div>
+    </section>
+
+    <section class="panel">
+      <div class="corner tl"></div><div class="corner br"></div>
+      <h2>ESTADO DEL PILOTO</h2>
+      <div class="stat-grid">
+        <div class="stat"><span class="k" id="sStreak">0</span><span class="l">Racha (días)</span></div>
+        <div class="stat"><span class="k gold" id="sPoints">0</span><span class="l">Puntos disp.</span></div>
+        <div class="stat"><span class="k" id="sLevel">1</span><span class="l">Nivel</span></div>
+      </div>
+      <div class="bar"><div id="levelBar"></div></div>
+      <div class="muted small" id="levelHint"></div>
+      <h2 class="mt">REPASOS DE HOY</h2>
+      <ul class="mini-list" id="reviewList"></ul>
+    </section>
+
+    <section class="panel span-all">
+      <div class="corner tl"></div><div class="corner br"></div>
+      <div class="plan-head">
+        <h2>LÍNEA DEL DÍA</h2>
+        <div class="day-nav">
+          <button class="icon-btn" data-shift="-1" aria-label="Día anterior">‹</button>
+          <button class="chip" data-shift="0">HOY</button>
+          <span class="day-label" id="dayLabel"></span>
+          <button class="icon-btn" data-shift="1" aria-label="Día siguiente">›</button>
+        </div>
+        <button class="btn" data-add-task>+ TAREA</button>
+      </div>
+      <ol id="timeline" class="timeline"></ol>
+    </section>
+  </main>
+
+  <!-- ================= PLAN ================= -->
+  <main class="view layout" id="view-plan" hidden>
+    <section class="panel span-2">
+      <div class="corner tl"></div><div class="corner br"></div>
+      <div class="plan-head">
+        <h2 id="planTitle">PLAN DE MAÑANA</h2>
+        <div class="day-nav">
+          <button class="icon-btn" data-pshift="-1" aria-label="Día anterior">‹</button>
+          <span class="day-label" id="planDayLabel"></span>
+          <button class="icon-btn" data-pshift="1" aria-label="Día siguiente">›</button>
+        </div>
+        <button class="btn" data-add-task="plan">+ ACTIVIDAD</button>
+      </div>
+      <ol id="planTimeline" class="timeline"></ol>
+      <div class="sys-row mt">
+        <button class="btn" id="confirmPlan">CONFIRMAR PLAN</button>
+        <button class="btn ghost" id="copyYesterday">COPIAR PLAN DEL DÍA ANTERIOR</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="corner tl"></div><div class="corner br"></div>
+      <h2>NOTA DE PLANIFICACIÓN</h2>
+      <div class="score-box"><span id="planScore" class="score">—</span><span class="muted">/ 10</span></div>
+      <div id="planBreak" class="breakdown"></div>
+      <h2 class="mt">ENTREGAS POR AGENDAR</h2>
+      <ul class="mini-list" id="toSchedule"></ul>
+    </section>
+  </main>
+
+  <!-- ================= CURSOS ================= -->
+  <main class="view layout" id="view-cursos" hidden>
+    <section class="panel span-2">
+      <div class="corner tl"></div><div class="corner br"></div>
+      <div class="plan-head"><h2>ASIGNATURAS</h2><button class="btn" id="addSubject">+ ASIGNATURA</button></div>
+      <div id="semesterBox" class="semester"></div>
+      <div id="subjectList" class="subjects"></div>
+    </section>
+    <section class="panel">
+      <div class="corner tl"></div><div class="corner br"></div>
+      <div class="plan-head"><h2>PENDIENTES</h2><button class="btn ghost" id="addPending">+ ENTREGA</button></div>
+      <div class="muted small" id="syncInfo"></div>
+      <ul class="mini-list" id="pendingList"></ul>
+      <h2 class="mt">CORREOS POR REVISAR</h2>
+      <ul class="mini-list" id="emailList"></ul>
+    </section>
+  </main>
+
+  <!-- ================= AVANCE ================= -->
+  <main class="view layout" id="view-progreso" hidden>
+    <section class="panel span-2">
+      <div class="corner tl"></div><div class="corner br"></div>
+      <div class="plan-head">
+        <h2>DETALLE DEL DÍA</h2>
+        <div class="day-nav">
+          <button class="icon-btn" data-gshift="-1" aria-label="Día anterior">‹</button>
+          <span class="day-label" id="progDayLabel"></span>
+          <button class="icon-btn" data-gshift="1" aria-label="Día siguiente">›</button>
+        </div>
+      </div>
+      <div class="big-metrics" id="bigMetrics"></div>
+      <h2 class="mt">POR CATEGORÍA</h2>
+      <div id="catTable" class="cat-table"></div>
+    </section>
+    <section class="panel">
+      <div class="corner tl"></div><div class="corner br"></div>
+      <h2>ÚLTIMOS 7 DÍAS</h2>
+      <svg id="weekChart" viewBox="0 0 320 170" class="week-chart" role="img" aria-label="Índice de los últimos 7 días"></svg>
+      <div class="muted small" id="weekAvg"></div>
+      <h2 class="mt">RESUMEN 30 DÍAS</h2>
+      <div id="monthBox" class="breakdown"></div>
+    </section>
+    <section class="panel span-all">
+      <div class="corner tl"></div><div class="corner br"></div>
+      <div class="plan-head">
+        <h2>INFORME MENSUAL</h2>
+        <div class="day-nav">
+          <button class="icon-btn" data-mshift="-1" aria-label="Mes anterior">‹</button>
+          <span class="day-label" id="monthLabel"></span>
+          <button class="icon-btn" data-mshift="1" aria-label="Mes siguiente">›</button>
+        </div>
+        <button class="btn ghost" id="monthVoice">ESCUCHAR INFORME</button>
+      </div>
+      <div id="monthReport"></div>
+    </section>
+
+    <section class="panel span-all">
+      <div class="corner tl"></div><div class="corner br"></div>
+      <div class="plan-head"><h2>RECOMPENSAS</h2><button class="btn ghost" id="addReward">+ RECOMPENSA</button></div>
+      <div class="muted small">Se desbloquean con puntos disponibles <b>y</b> cumpliendo el promedio semanal mínimo de cada una.</div>
+      <ul id="rewardList" class="reward-list mt"></ul>
+    </section>
+  </main>
+
+  <!-- ================= AJUSTES ================= -->
+  <main class="view layout" id="view-ajustes" hidden>
+    <section class="panel">
+      <div class="corner tl"></div><div class="corner br"></div>
+      <h2>NUBE Y CUENTA</h2>
+      <div id="cloudBox" class="muted"></div>
+      <div class="sys-row mt">
+        <button class="btn" id="loginBtn">INICIAR SESIÓN CON GOOGLE</button>
+        <button class="btn ghost" id="logoutBtn" hidden>CERRAR SESIÓN</button>
+      </div>
+    </section>
+    <section class="panel">
+      <div class="corner tl"></div><div class="corner br"></div>
+      <h2>AVISOS Y VOZ</h2>
+      <div class="sys-row">
+        <button class="btn ghost" id="notifBtn">ACTIVAR NOTIFICACIONES</button>
+        <button class="btn ghost" id="testNotifBtn">PROBAR AVISO</button>
+        <button class="btn ghost" id="testVoiceBtn">PROBAR VOZ</button>
+        <button class="btn ghost" id="soundBtn">SONIDO</button>
+        <button class="btn ghost" id="voiceBtn">VOZ</button>
+      </div>
+      <div class="muted small" id="sysStatus"></div>
+      <form id="settingsForm" class="form-grid mt">
+        <label>Cómo te llama Jarvis<input name="name" maxlength="30"></label>
+        <label>Avisar antes (min)<input name="remindBefore" type="number" min="0" max="60"></label>
+        <label>Informe matutino<input name="briefingTime" type="time"></label>
+        <label>Planificación nocturna<input name="planTime" type="time"></label>
+        <label>Planificar al levantarse hasta<input name="morningPlanUntil" type="time"></label>
+        <label>Meta diaria (horas)<input name="dailyGoalHours" type="number" min="1" max="16" step="0.5"></label>
+        <button class="btn" type="submit">GUARDAR AJUSTES</button>
+      </form>
+    </section>
+    <section class="panel">
+      <div class="corner tl"></div><div class="corner br"></div>
+      <div class="plan-head"><h2>HORARIO DE ALIMENTACIÓN</h2><button class="btn ghost" id="addMeal">+ COMIDA</button></div>
+      <div class="muted small">Bloques fijos aparte de tus tareas. No cuentan en la productividad, pero la nota de planificación baja si una tarea choca con ellos.</div>
+      <ul class="mini-list mt" id="mealList"></ul>
+    </section>
+    <section class="panel span-all">
+      <div class="corner tl"></div><div class="corner br"></div>
+      <h2>DATOS</h2>
+      <div class="sys-row">
+        <button class="btn ghost" id="exportBtn">EXPORTAR RESPALDO</button>
+        <label class="btn ghost file-btn">IMPORTAR RESPALDO<input type="file" id="importFile" accept="application/json" hidden></label>
+      </div>
+    </section>
+  </main>
+
+  <!-- Diálogo de tarea -->
+  <dialog id="taskDialog" class="dialog">
+    <form method="dialog" id="taskForm" class="panel">
+      <div class="corner tl"></div><div class="corner br"></div>
+      <h2 id="dlgTitle">NUEVA TAREA</h2>
+      <label>Actividad<input name="title" required maxlength="90" placeholder="Ej. Resolver ejercicios de RM II"></label>
+      <div class="row">
+        <label>Inicio<input name="start" type="time" required></label>
+        <label>Fin<input name="end" type="time" required></label>
+      </div>
+      <div class="row">
+        <label>Categoría
+          <select name="category"><option>Clase</option><option>Universidad</option><option>Estudio</option><option>Proyecto</option><option>Contenido</option><option>Salud</option><option>Personal</option></select>
+        </label>
+        <label>Prioridad
+          <select name="priority"><option value="1">Baja</option><option value="2" selected>Media</option><option value="3">Alta</option></select>
+        </label>
+      </div>
+      <div class="row">
+        <label>Asignatura<select name="subjectId"></select></label>
+        <label>Tema (cuenta como repaso)<select name="topicId"></select></label>
+      </div>
+      <label>Entrega vinculada<select name="pendingId"></select></label>
+      <label class="check-row"><input type="checkbox" name="closesPending"> Al completar esta tarea, la entrega queda hecha</label>
+      <label>Repetir
+        <select name="rec"><option value="none">Solo este día</option><option value="daily">Todos los días</option><option value="weekdays">Lunes a viernes</option><option value="weekly">Cada semana, mismo día</option></select>
+      </label>
+      <label>Notas<textarea name="notes" rows="2" maxlength="400"></textarea></label>
+      <div class="dlg-actions">
+        <button type="button" class="btn danger" id="delBtn">ELIMINAR</button>
+        <span class="spacer"></span>
+        <button type="button" class="btn ghost" data-close>CANCELAR</button>
+        <button type="submit" class="btn">GUARDAR</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Diálogo genérico (asignaturas, temas, exámenes, entregas, comidas, recompensas) -->
+  <dialog id="formDialog" class="dialog">
+    <form method="dialog" id="genForm" class="panel">
+      <div class="corner tl"></div><div class="corner br"></div>
+      <h2 id="genTitle"></h2>
+      <div id="genFields" class="gen-fields"></div>
+      <div class="dlg-actions">
+        <button type="button" class="btn danger" id="genDel">ELIMINAR</button>
+        <span class="spacer"></span>
+        <button type="button" class="btn ghost" data-close>CANCELAR</button>
+        <button type="submit" class="btn">GUARDAR</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/firebase-config.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/seed.js"></script>
+  <script src="js/metrics.js"></script>
+  <script src="js/study.js"></script>
+  <script src="js/advisor.js"></script>
+  <script src="js/monthly.js"></script>
+  <script src="js/voice.js"></script>
+  <script src="js/notify.js"></script>
+  <script src="js/news.js"></script>
+  <script src="js/cloud.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

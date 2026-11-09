@@ -1,0 +1,24 @@
+name: Noticias del día
+on:
+  schedule:
+    - cron: "35 9 * * *"   # 04:35 Lima (antes del informe de las 5:00)
+    - cron: "5 17 * * *"   # 12:05 Lima (actualización de mediodía)
+  workflow_dispatch: {}
+permissions:
+  contents: write
+jobs:
+  noticias:
+    runs-on: ubuntu-latest
+    env:
+      TZ: America/Lima
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: node backend/noticias.mjs
+      - name: Guardar noticias
+        run: |
+          git config user.name "jarvis-bot"
+          git config user.email "jarvis-bot@users.noreply.github.com"
+          git add data/news.json
+          git diff --cached --quiet || (git commit -m "Noticias $(date +%F)" && git push)
