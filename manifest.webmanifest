@@ -1,7 +1,7 @@
 {
   "name": "J.A.R.V.I.S. · Ramos",
   "short_name": "JARVIS",
-  "description": "Dashboard de productividad personal de Frank Ramos",
+  "description": "Dashboard de productividad personal",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
