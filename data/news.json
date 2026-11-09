@@ -1,5 +1,429 @@
 {
-  "generated": null,
-  "note": "Este archivo lo actualiza automáticamente GitHub Actions cada madrugada (backend/noticias.mjs).",
-  "sections": {}
+ "generated": "2026-11-09T17:39:03.268Z",
+ "sections": {
+  "local": {
+   "title": "Tacna",
+   "items": [
+    {
+     "title": "Más de mil bailarines religiosos celebraron su día en la catedral de Tacna - Diario Correo",
+     "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxORkhweXZPbkJKSHRDak9nS0J3bnE5aVpHYUU1Zm5FTl84RjNWekQxTERfczBGX3Uyendub1JRSmlQdl9iLW1JR1FVMW00SkRMcUp0RHhRSnJGcVAxczZLX3R2V0pqeEZ5SzdxVkV1eTlic3liT29EcUhfQjkzOWVMRGIxSm5tSGptYTBrSTByeEtlSklpdnVLSG56d0tfNUZSZHRIQU4zSTJZVXQ3RWxMOWFQeUZRLThtRzJtY0tR0gHSAUFVX3lxTE9JQXFKenQybGFfelNUT0cxUUo4VTBvaHJZdnp2RGpvUHk5WmJGNTE1bHU2d3M5VWZtd1NtblYyYVJSeWpwR2hQaW1MZDh6MjFrYklXc09HQi11T3JUbWI3Y2RQSndnemlrS1dweWRSTVlndFdBWGs4T1p1VHZMY3RFTXpXTmNpWG5ITW1pSGxhc2JtSFFzMGt4bVhia0FldW5iTUFUbTgyTGhQYUVUVklJdE11emNwS3psdlllRDdoaVpGRGxWWHV1ZV9RNFNaWC1GUQ?oc=5",
+     "source": "Diario Correo",
+     "date": "2026-11-09T16:30:00.000Z"
+    },
+    {
+     "title": "Se registró un sismo de magnitud 4.8 en Tacna - Infobae",
+     "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQSENxYzUyNlhobEdTM3RxWXFaRUpqckctLU5HLWdqNW1kZk9PS0Z0OTlDeC1GZlg5SE14LVBHTllLQmZDZmdtZ2FkRktiNGFNZXA3NmpaU1h1NXhoNVp4WGJCSEVHSFExV0xKakhVZFBxNmpFYWFvUVdqYUFjZ0hWWWFKQjZ5Y3ZYQ2VOSUl30gGoAUFVX3lxTE9laTl0TW9vY2ZONWJpUkdYNmMtX1FSZkN4YWNqUVhaRGhnZWo5Ymx2VVZoX3FsZDlfemNWMUNSb3Y0ZTVlNEljSE1meVBpX1h3RXdZcEJuSHNKRzNhbGhyUU55NW9NMmFNTVRjc0h2aU9TQ2dhZjE2SHVlQWVxSndyZjlsNjVqSWVYNzBOS2draGpnNFFoaVJPQ2JWbUhpdzB1SkFhbGFWMQ?oc=5",
+     "source": "Infobae",
+     "date": "2026-11-09T05:16:00.000Z"
+    },
+    {
+     "title": "Reportan fuertes vientos en Piura, La Libertad y Tacna, causando daños en colegios y cortes de luz - El Comercio Perú",
+     "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNc1pDVkZYVUVUa2Vfdl9jY3lZTlVfRWYzN1lEd1RxZUpkUzdEYVVZalJ5YVdwcWxpSW15RUFlWlJxbUhkRWUtUEJpNGd0clRnaVZZZ050U2d2cGpjNWxYNjlsOGFGYW5DeEpqSkdWNVFubTFWVVdvNTVUUDdOOVdVN1J5T25OM3BZYVNtTXJJaWkyYW1BYnF2NUhUZHBrNDVsc3RjdkdtNTNjYlhZUmVZVzJJbXBxN2JGWk1uOWEwaWVuWmp0WEpKeU9CbnFpQ1JpX0N5cDJua9IB6wFBVV95cUxQNUo3cllqbF96MzZtWWxMX3NUNVFxLU50WFd0ZUZjTXZLbVpkekt0a2p1ZGFOVExjdGM5bFNDeVNYck1Mak50NmpZQ1hqZWVJc1FjdmxtOTFualBJZXFHS1V2M3ZGRUZCdklrVXNNYzBYNFRJTlcwckhRY1NDTjluaVVlYnhUaTQ0LU9xR0RmbXFMLVVyNG0zZEtNeVlFRHBVSmhlZ1B0RHQxNzVic3p4ajBqeWM5bGtCZ3YteHU3ZzZsS1JNSlNQZngxS0NEU05YclEzWllNYnNwWkpybmZ1UWpwb2ZSSkJkLThz?oc=5",
+     "source": "El Comercio Perú",
+     "date": "2026-11-08T22:45:00.000Z"
+    },
+    {
+     "title": "Tacna registra la séptima tasa más alta de denuncias por corrupción en el Perú - DIARIO VIRAL",
+     "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOMWxoaXM0LTBvLVBTQTBhNGY5NksxT25QMEVORXM4WldzbDJxWl9MbmJjMEZ4X2xGUVRRR2E4ZGFXR0gxUC1hcUE5RzdyTmk2LTF1TDB0S0tqYWcyYnVINmQzbE16OFZxdFcwSUFoU05PbzEzRjZxYXhzc1dIY2l6cklXdFJoeG5qMzVZSWtPRDlYVWNURzZaSjk0c29ZWXBMUlBhVmM4Yng5NmZZVzl1WWVXUEpPT0hrN3lF?oc=5",
+     "source": "DIARIO VIRAL",
+     "date": "2026-11-09T07:59:25.000Z"
+    },
+    {
+     "title": "Tacna gestiona recursos del SIS para financiar atención médica durante 2027 - Revelación.pe",
+     "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQbVozN01RVkZLTDlQN2xlcW9wN2dJVWlKajJ3b0ZMaDdSLVQxTk1YUlVXYk1wb1Z4VE5hLTNURU1JdHloTW43M2VYNWFLTGV1NHVLWGpJanJWelFBazZXQjBTRVIyRFlpQjZlTGRyZ1c1VGRIRmJaWE50dHJzNEk3aHVHNE5zakg5MXFTZkpXMEJSRVpJSmZrMDBYTlF4TG8ybTROMV9QSlB0dXZnSHc?oc=5",
+     "source": "Revelación.pe",
+     "date": "2026-11-09T07:09:16.000Z"
+    },
+    {
+     "title": "Tacna: Vecinos se oponen a que se licite obra de plaza por 7 millones de soles - Diario Correo",
+     "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNbGl6TjRhakxZWEt6QzBudUVaR1VZRHZOQTRGcjVIZjBrWDE4V0FRMFNXUVNVcTM5UG1LUzVXa1E5THRSRVVMNmJrT0xYRTNabHNsWWs5czR0WDlVMTAxbVZnRHhBQjV4UGw3YVhLT0VPSHliN3JTclFWMExrdzluTU5obThfaVBzdloyYk9hbUZ6OC1mOTFXelVJekNsbUtiQkg5dGRjSWZxRDByczQ5dW40Nm05c0VkczZsWXBFSENqd9IB1gFBVV95cUxPN045VWpJZllCdzdaTUh4dnpBOFZEMUhDYmJxUjV0TmlMREpaSTl5Q2ItTkJEVUJEUlpWT0lkdlFRQm1FNHdnT1FfU3hVMnlZSmJkbHZMUURhWklFY2pzdnVia3N0R2Z2NDJoODlqNG84aUx0VWhWc2Fsem1SaU1HZEpybC0waGM3WEhTSTVwOE56R1pUVW0yTG8tYWxqOHkzVERoYkhYeEh2cFVIXzIzYm5IZTlNZlphYVFRd1RUUTFKSS1sYlhreE8xVDhiX0ZtSmYtWWJB?oc=5",
+     "source": "Diario Correo",
+     "date": "2026-11-09T14:56:07.000Z"
+    },
+    {
+     "title": "Detienen a hermanos con más de 35 millones de pesos sin declarar - radio uno 93.7",
+     "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNd2tGMkNsUTkxUHpyVHliOFJJVTdXd0x3YkdCY3hrVkJTWERFMjBpbTRPSy1TQm4zWDJUZjA4SzBLVTBYaXdRZnMtWVAyZzBDRzY3QnlPeU84QjlyQnpTcEl0QXhqbFk5ejZKMDFJb1JRYkRIU0ZvaGcwSWtPdndiLXpMSWkwanFIWEdVQ0U2cHRLelFWTjRQcGNVMnZ0ZXI1cG93?oc=5",
+     "source": "radio uno 93.7",
+     "date": "2026-11-09T13:13:56.000Z"
+    },
+    {
+     "title": "Tacna: separan a fiscal adjunto que fue... - Panamericana TV",
+     "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQSUxTd2djbnpIOGhETTJMTUF0WkE4ZU4tWFdrLU56VTdWVG1TWkxNT2ZfQnhnWTUxcUVndlZIdTlnalZGUEZkcEpnSm5OaVNpdlRoQ3VuZDA3eTRSVnZsZ201TTZnUjlKeENSSThvTjd4Ry10d3d4VzFpUkdQM1hwTXJpb0RCYWxKajRnVDVCdjNNX2tGb0pONjVSVzFkS3hKV1pOOUR3UkVubzDSAasBQVVfeXFMUElMU3dnY256SDhoRE0yTE1BdFpBOGVOLVhXay1OelU3VlRtU1pMTU9mX0J4Z1k1MXFFZ3ZWSHU5Z2pWRlBGZHBKZ0puTmlTaXZUaEN1bmQwN3k0UlZ2bGdtNU02Z1I5SnhDUkk4b043eEctdHd3eFcxaVJHUDNYcE1yaW9EQmFsSmo0Z1Q1QnYzTV9rRm9KTjY1UlcxZEt4SldaTjlEd1JFbm8w?oc=5",
+     "source": "Panamericana TV",
+     "date": "2026-11-08T18:24:59.000Z"
+    }
+   ]
+  },
+  "nacional": {
+   "title": "Perú",
+   "items": [
+    {
+     "title": "Entradas para ver al papa León XIV en el Estadio Nacional: cómo conseguirlas gratis desde HOY 9 de noviembre: LINK oficial de Teleticket - Infobae",
+     "link": "https://news.google.com/rss/articles/CBMihgJBVV95cUxPcUo3UlhYenRuV01OZ1k1SlY2cUd5allXenc1RE94VENNR043SHp1NTZTZG55aXFLakJXbzdkQWVKTVpsSFRKSTZJN3JmLWRRMjdZN0l6eGtyOUpuQjNSbzdUZkRaR1FNdG5NclVfSWVDNXlvdU0ydkFhLUZJUjB1WllRZVVYRFRQX2I1QTNZMzl5RHVjTFFLQ3B6SFRrd3RLY1pYMnpNS1dSRkZYTnZTZVBPM3VVY1RITVlWWUh3Zy1CX2c4b0lKRkhnMjdlcXg0YVVXYWdsMEJQVXJMNl92enNqbXc0ODhKazV5TVdzcGNzcUJEQVpOSTBITld6bHlMOC1RekZn0gGgAkFVX3lxTE5aWmlPSlhmRFVuNHRjYjNvZFdpN0o3Zl9oVHlsSEREaEl0MkdibmJuWFNERlFoMVU1TnVKQkxjWi10bFNaSG5uUENYeHVyS0ktS0dzUlFzTkhGdnZZV1R5cXAyTzJDRkZQTTZaWDVQaXIzM0FDVC1CTzVBM2FyWEZ3Njd5X1ZJRUpsd2VsanJkYl9qSUpRUEVKZlpWaFZnMkVjcHNWbUEzb2ZyaFpDZ2NXMVNMbVdrOUtLSEQyWGYza2VzcVBJTnlMaWtLQmJZWEVmTXFHOWpkbnJyWWxkT2lwN1ZaN1M3V2p1UmhaU2FvbHl4WjRFT0FmX25VTU1TT0lPVFU4T29BOHpuTVlYWkJzeTRiV2t2OW4wdElBZHBscA?oc=5",
+     "source": "Infobae",
+     "date": "2026-11-09T11:00:00.000Z"
+    },
+    {
+     "title": "\"El progreso de una nación también se mide por la acogida que da a los discapacitados\": por qué es tan simbólica la visita de León XIV al Pequeño Cottolengo Don Orione - BBC",
+     "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE54MUs5cjZCZTItZ0tuMmktcGdwaVFQckFOZ2hKQ0hBcElhaWx1RlFhVXc0LVZxclZ4QkNwZG9pTTliSG1RRmgwcW5OcWNZRUs4WV83WFBDZDFSUi1Z0gFiQVVfeXFMTkRYWTc1dUx0bHBpUDAwYXRxTDlpMkc5bmVvRy1FUF9JYlJBTFRNdk5KaDJ4YlpEaEQwYkxfX0RFcFFUQV8xUGhucXNOMWRxSlJVczgxdVU0TC03LVFVbmsyTEE?oc=5",
+     "source": "BBC",
+     "date": "2026-11-09T13:41:56.000Z"
+    },
+    {
+     "title": "¡Atención, Lima! Más de 50 empresas de transporte dejarán de circular MAÑANA 10 de noviembre - Perú 21",
+     "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQUkgzLU1YYVBpX0VIZ3pUcU52M1I5YlBJT2lmcmhjeEZual9YelFFTDFFeXNrRHpvZ1B5ZEdSVndHS0RTYTQxQTk2R21aUVVQLWdaTk9SVWQ2UmtxMGpoakw1ejVKY19oZ2ZlQW1OMUtpR2F0WG5xQ2ZkMThoLVcya05NdXFXTi0xT3FiZFBBUFB6dHpwSzBMNmxCdG1EOGdhXzdFWklaX2Q2TGloZ1RqUlVMcw?oc=5",
+     "source": "Perú 21",
+     "date": "2026-11-09T12:37:32.000Z"
+    },
+    {
+     "title": "León XIV ante Milei: \"La economía debe estar al servicio de las personas\" - Deutsche Welle",
+     "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOc1A1NTdDTWQ4UUYwTFVDOUxLUXV0TDFwRnpTREM0WmJvVTJVQzlDd0UtWElVc1lfNFRWQjI3U1lxZ0hqWnJFd2NSSW5rUE51N0dYOXhiOE11UHlveGtWWExyVk5rVFcySnFWV0VfWnB0dFloSDlIS3BzMXlTcnBwZ3RWclVUMEFKLUp3TVRpcV90R0tKN0c3VGtZMHNpb0ZQTDdVTk15ZE5LRnNCdWpoMV9HNNIBswFBVV95cUxNcnh5bGRiQWRlZHNsMF9HcHBGRHJodGlfc2ZNQW9wdm44YlgtUEZSSUFSZldkQUI3R3hxVVFsSU9XaC1wUE1MdXYwTW1iVV9CQXJzVGhBUjU1NFM0RnpiZmdpZTZPNXFQb1FZX3QzazMtZHNQa3VlR1lrZ0xoQkJhUjhZQjl0bU1GSzN6b2Fmam0yNm10SDlvVUdkNm5YN2ZXSk1aRDlfT01YcVFXY2RqX0pVNA?oc=5",
+     "source": "Deutsche Welle",
+     "date": "2026-11-09T00:32:54.000Z"
+    },
+    {
+     "title": "Muerte de José Miguel Castro queda sin aclararse porque fiscal no revisó celular - Perú 21",
+     "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOdDdVSC1BLXZaWTBGTjBweXZ0V0JyUllsWnZJc0xMOHFycjFpckFQOExobEVmaTlqR3ZFNkJxdFFOMzlPMkg5bXRmSzFBbVNtWUZMUXhzS1dub25HUVhtYVlPMm4zekRSX1hQSVhQZ2tGM3Z6eTVLbzR6TS1XWjUzMTV2TDlWZGJFQUV1bEp0VTFxQl9CSS1GT0VxMkpNSm5OalJZSA?oc=5",
+     "source": "Perú 21",
+     "date": "2026-11-09T01:19:21.000Z"
+    },
+    {
+     "title": "DL 1743 modifica la regulación de la legítima defensa: se presume que quien ejerce la legítima defensa ha actuado de modo racional frente a la agresión - LP | Pasión por el Derecho",
+     "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPMlgxV2pQb3A5b0hfSVhCQ0d3Q0lrUC1CQjIxckZ4VWE2cEdGMUdMOG9NZFhCTVh0bnVOYjVyMkN4Zl9BMDBXTUo2VnFPTEtZWmlWVzhabV9rV3BFU1RQV08tZDItd29ZblZZdUE4bF9qbWYwUjlZcF9sT1VDdF9WYVVxakdLa2liMW1JTnhrWXlfSmIzNGV1WElTanJ1YXZRV3J0bUpjQkY4SzRscUlCZ2hoelhjS1owUmhZWWpwUW5RV09qVWZ1ZFJJcDltWFE?oc=5",
+     "source": "LP | Pasión por el Derecho",
+     "date": "2026-11-09T13:01:13.000Z"
+    },
+    {
+     "title": "Pedro Castillo: INPE removerá a agentes de Barbadillo tras revelarse contratos de sus familiares con JP en el Congreso - La República",
+     "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQRzY0VllTT1l6dGc2NHROamdzSTk0T25lN3R2dVNBNWpfaF9VZ0RLWUhpTVdpMXNRZkQzdkRBYWpMZzdsb2R1RzVxeXNLcHlNd1dWOW1hbFROUS1ieXBVRmVBVWxfVEs5NF9oRmRyT1ZBN0hKMEF3c1E3dnROUElZNlBSUl9BU25pTWQyVTNraDlETC1hYjVsZEVHYlR6aEVaYlo2V192UjRUcFdScUlXX1FXYXRnR2llQWtJY0RCUnZoa1lhM2xGZUIwZlFNUV80Y3NWVnp1RExyZTM4OUVqZkg5MkZYc2ZhUGNCczh5VU_SAfYBQVVfeXFMUHN4aF9ZRWFZaXNVTGJHdGxOMHFHbFZfYmp4clNLQUszd2F2MzZUTWlRS0tvUFR3NjF4ZHctVDk4YTBHODFodDdKaThRVWROYzgxei11X3QtUkFNeDlGdnJhWmd6Z0hyU2paNWttZzN6UmtRUVo1OHV1dkV4djJEQXM3Tzk2dFZQV0ZPVHBnOFdMX2xfSEJ1SS1TZTFOMXVna1ZnSlYwYzAxSDJDUWlDNGxBazY5SUdzSnJzYTF3TDh5VVBSNk5GcVhVdXdERkp1aUFITHhiNFlmMnY0eTVSS3lGaFNYWkpVR0Z4WUJ1SzVoSHc1R3Fn?oc=5",
+     "source": "La República",
+     "date": "2026-11-09T16:14:21.000Z"
+    },
+    {
+     "title": "Canciller Carlos Espá llegó a Moscú para reunirse con su homólogo ruso Serguéi Lavrov - RPP Noticias",
+     "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNcmQwLTY1VTJCUUtyQ01jVlpUd2pxLVJBZExvVGdxM2ZlSUE0TnNIRG5kVEFVZVNRWkN4aHhmeTBTUW5pZVU3TEpTSjhCazdDTU9UbVpZdmV6SHpObTVJWURBSWJJaVZwWXZiOHJRX010a3kybi1ab2Y3QUo4TGRzVU9QY3pFbGxkdTkzTnlmZ1JsaWpYOWxfVmEyN0VzSlVYRmZIdzY5VXl6ZjJSMUU1eVBTYm5ob3djVWl2aVVOUXdyWmxROWxnRGhXTHF4NE0?oc=5",
+     "source": "RPP Noticias",
+     "date": "2026-11-08T14:36:09.000Z"
+    }
+   ]
+  },
+  "internacional": {
+   "title": "Mundo",
+   "items": [
+    {
+     "title": "\"El progreso de una nación también se mide por la acogida que da a los discapacitados\": por qué es tan simbólica la visita de León XIV al Pequeño Cottolengo Don Orione - BBC",
+     "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE54MUs5cjZCZTItZ0tuMmktcGdwaVFQckFOZ2hKQ0hBcElhaWx1RlFhVXc0LVZxclZ4QkNwZG9pTTliSG1RRmgwcW5OcWNZRUs4WV83WFBDZDFSUi1Z0gFiQVVfeXFMTkRYWTc1dUx0bHBpUDAwYXRxTDlpMkc5bmVvRy1FUF9JYlJBTFRNdk5KaDJ4YlpEaEQwYkxfX0RFcFFUQV8xUGhucXNOMWRxSlJVczgxdVU0TC03LVFVbmsyTEE?oc=5",
+     "source": "BBC",
+     "date": "2026-11-09T13:41:56.000Z"
+    },
+    {
+     "title": "Director de Nvidia reconoce relación extramatrimonial tras revelarse presunta relación con una espía china: lo que se sabe del caso - RPP Noticias",
+     "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQUmt0QXh0LU9LM0g3cTF4ZnU1ZTVnaHNOenNrLU9QV09QMTlTVFowUHFmMENNNzRveThnUk5JRlFwUVc5VmRFZ2h0T29sR2hkNEpQT0Q4WUxrbXdLcmtHWHBNYjZ5ck9ueFhMZzhnaUN5WU9Kb2R3SzhHX2p4cUxqbFhndHZQUVE2d3pFRVBGam9zcVlEYlZDRWhkTk05S3pJcTZfQzY0SXIzMG9zQ09XNGdSNjQ3XzBvV0I1cEVB?oc=5",
+     "source": "RPP Noticias",
+     "date": "2026-11-09T03:20:28.000Z"
+    },
+    {
+     "title": "Sin mencionar a Milei, León XIV pide menos divisiones en Argentina: \"La democracia se fortalece en la disposición a escuchar\" - CNN en Español",
+     "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOVFo0cFlGanZNaVVtSF9SUkxzYmlRWHpFS1BOMWR6OWd4ZTNQV3BHNG0tWDlwY2tCYlRWXy1kTkMzR1kzNHZZR3BQXzRTdlJTLURMb25mcTV6cTJjMzh2dHNaQ01wVVFkMVptVXEyNVF5aXRMdVVpZ0xkXzZ1UG9GREd3WWRpYWlIWVd4WWZnVi1Pb0hFdGc?oc=5",
+     "source": "CNN en Español",
+     "date": "2026-11-08T22:44:00.000Z"
+    },
+    {
+     "title": "Fiscalía de Paraguay allana mansión de Santiago Peña y se topa con puerta blindada que no logró abrir [VIDEO] - RPP Noticias",
+     "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOdDdaamlObDh2WnVjb1M0eTE4aENCWEJSclNXS2hrdnBHSVpHamRRTnJVUWtCYUdyRldwXzZmQmlOWnRSSzN3VlNfclZxUWdZY0ZyVGo5ZFVKTjZjYlBDX3FfVlJ4cUtGUW5Hb1RQYVdwdnZ6alNfOTlydkdPQTA2b1NoektUTjFrcGx2SndoeVlyM21NQzl5WGpXc3pKY3I3cXBjWHQxY0NCczFPdnliaDN2QlBYQk9rUGJoWGh1MlNxT1RKT0VUTkEwVDJxNV8wczlQS0Z5dXpMdVc2dUJEVEM2b3YwdFZTOHBv?oc=5",
+     "source": "RPP Noticias",
+     "date": "2026-11-09T05:14:51.000Z"
+    },
+    {
+     "title": "Santiago Peña le dice a comandante de la Guardia Presidencial: \"Voy a ser tu huésped por mucho tiempo\" - RPP Noticias",
+     "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQV05uMEZTbmJpdVlEX2tPb2VHV3JSQ2hQWGZsLXRBYmNMWVY2Y3A5NGVzbzM4RTNLU2tBdUwwQlJSVlRUWGhTWW80VVJUVzgxUkw5WGxZTXc4aHV0SFF0aHFMclRQcTk1bldPWTdod3NSZUJ1V2dZaHJubWV4V2VsLUZuNE9QTExJTWpSOFVhX25BTW1BQkFCRXJKZEItOU9odC1Vb1dSeGlJaWo5LXpEaWpPNHUtY1o2aXNrR1RaaG9tOG5ab0trdTFpcFFEcTgt?oc=5",
+     "source": "RPP Noticias",
+     "date": "2026-11-08T17:54:11.000Z"
+    },
+    {
+     "title": "Carla Campos Salazar se pronuncia sobre la posible relación entre Curwen e influencer Suemi Chang: “Que triunfe el amor” - La República",
+     "link": "https://news.google.com/rss/articles/CBMigAJBVV95cUxOWkdvNlZUbWVmUTZ0V1FzYllCYU83dW02alJBb1BUNlU4cXVLMzNoRDhYcXYzc2RzM0hLRlpQdEUxcmVfd0ZqeU5UWGFiMjhDUHNQTVUwM0ZEaUcySFRVUGtMSDlJSVdnMm43NFRpRzZ4bkNYR29tSVhObW51aktTQndZUWM1c09zRG5VQ1FqbFpVaC0xMFV5RVlORkp2TGFkbDBTRFpGY0haRUFnQWktTWY5a1o5YVdDX3VtZHB2aGc1Y0k5T1VTN3JZSWx4eEYwam9jb2RUV29YaWZZYmZQQXB4LTNZTExGX0lNZ09sZHZuMmQyX05MSTNRNS1hdjFm0gGGAkFVX3lxTE11TmxGLUx3cGVXNXl3V3dVZDA1LWNsVFlKQ0pnTWZ3b1JlSjl6eVVfd1ZPeWlVWGd2LWRJSXNrMWo2M2RhTm1lbTV2eUxrWVlNRmQxMWlRLXRvSzgxeHNvTGdGaVZMX0VQeUVDS0w3YnZkUk9xS1M2RU40T29Hc3lTNmVVVk1mMlBWSDcxcW5lWkVGa2xSeXY4UWFIX0xWNklPTEpfQVpHQUpXS180bGpnYXlMQnQtVG1YSVJwdE14cll6SGE1ekZpOVlfVFNCRjBXMDMzSkRhb2prd3ZHb21zeTVtRmNrTW9DTDBuTUVLTDQ3RlpvY3QzVkxlYnVzenE3Q1VHcVE?oc=5",
+     "source": "La República",
+     "date": "2026-11-08T20:34:05.000Z"
+    },
+    {
+     "title": "Detienen en Argentina a un hombre de 49 años por presuntas amenazas de muerte contra el papa León XIV antes de su visita oficial - La República",
+     "link": "https://news.google.com/rss/articles/CBMihgJBVV95cUxQVFJhVDN3NGFKUi1ZdEJQbHc1b0lmWkcwX3c4QW16TWFCdU9PM1AtemNrXzRVX0RMalR0aFpTNHh0U1J0UWZwcXBSaFlmVUFQemNBT1hQNndmcVhSLTlBOHBTdTNySmoxNHluOHVnbl95X0R0NGJBQ0dqMFBQVDNKSmVMY1FhaGp3ejZBR1Zlbi14Z3daS0RLZHM2X3JxRXZWYV9vUlhqU3Vhb1hDVE10VGYySGVma2pIVjNQU2hZb1Fxb3otMXhNcVBZc01aMUlYNm1nMEQ2amNQcjNyblhXUEhjd0dzOUF1U3hfYkpOVU5nN0wzcGhKNVFleG9PTTlqLWpBTkxR0gGLAkFVX3lxTFBsOW9fbDZWeGlNYW1xeUtyZXRZSWVNeE1oVTRsOUZ1cXlCQVdpdXBtaTNQU0NUSDVfdmkyRHo2ZU1qQlNhNV9jTS1YQUgyTjVJY2E0RW5iTVpoX1ZWaUE3OWZMbXEwbzk3RkhwRUdUT1RWVXpHV3VDT29xZUVUR2cyRzU3Y3dZVFJsNGpZNC1SanQxS0hHcTRPQUJfQXVBV29NMW1ELUxKcUhOQmhZbnVEYVBzTHdkbUNJMnN0blUwcjdFeFBSNXBuZDB3bktxM2luVi1MWHdyc2Rsek5QdFJnQXhEckZkQUk0a0w4UEMyRUZyOEhQNkwtUzJTUElSX1g4WkpVRUgyVDQ1SQ?oc=5",
+     "source": "La República",
+     "date": "2026-11-08T20:19:00.000Z"
+    },
+    {
+     "title": "Polonia: hallan en casa del atacante de Cracovia los cuerpos sin vida de sus padres y hermana - RPP Noticias",
+     "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPblN1c1owUnlKeVpiTkxnejBTaHNqbThNcjhtbWM0Q05LSTFKOWJkdXo5MDY2cWRaMEhMUURzMjNvQ01JVEMzNDUwVjJvYUNQY1hvOG9kZFcwRzAzQkU2RVcwSGNaOUJQbWk3emRxRnJFYm9HSWhGd2w1dkI4bW9DQUpMRVZEVS1lM3YySTNDTFNNMDBXcnVTODUxZ0Q5MlU1X3FXUV95ZlVWeEVVay1TcTl2eFd6dEJuVEFEM0JJNWlfdmZ3VEx5TDZJakhpUEUtN3c?oc=5",
+     "source": "RPP Noticias",
+     "date": "2026-11-08T13:53:40.000Z"
+    }
+   ]
+  },
+  "mineria": {
+   "title": "Minería",
+   "items": [
+    {
+     "title": "Exportaciones mineras impulsan ventas del Perú a China y apuntan a nuevo récord en 2026 - Rumbo Minero",
+     "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPbmlqLTdDbFNwaTVKaEdKSUlfYmE4ZkRWUVgwXzZUVmRoaDMtUFl1RHBwRXNLUWpILTdLOGdnNWEwLWpTeXFfUnVaenVqbnJRRmVfQlZaNGx3M3kwZGNrQ2VWLTE2ZVNCc256VDNMMDVodU1JcEd4em15RDNzWERhYXl1MGNlUWNvelFQcnBwUGVkV1ZPWFg2dHpQdng3VWVGazRDZkdCS3FvMmFlbE5KdXItcURuRVVzcm5uVElNYWVnUkwwb2trSVhLTmE3LVJkeXhmLQ?oc=5",
+     "source": "Rumbo Minero",
+     "date": "2026-11-09T13:58:30.000Z"
+    },
+    {
+     "title": "Southern Copper: Utilidad neta del tercer trimestre alcanzó un récord de US$1,801.8 millones - Energiminas",
+     "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOYTN3Wmc5bmFoSXBJeDRvUzlma1F1WnViUGZVcDE2dFNyQS1SSVJycHJHNFhDTlluSmxzR3pKM3NIR0xSUkVkbW52aFlrb1RhTWFSNWJ1aDdsZnZFdkhXcEVlSHBkbGpyR1JTcS05S04yU28tSEdzVW5KbnNGVHdhbFlHMkRlZ2RIcHcxYzJDXzhJRkxRTDJWWnMwVkZJTjVMY0VadjVUOG5xcTRqLUZxSk53ZTlpcVoxX2ZVQXRYTUd3b3c?oc=5",
+     "source": "Energiminas",
+     "date": "2026-11-09T14:07:46.000Z"
+    },
+    {
+     "title": "After Office Minero Perú-Chile (11 NOV) - Revista ProActivo",
+     "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBOdElEMHhQanRmZ3FRbTR3Ujk2SlYxWURfYXlKcERCZVZzWW5BNXZmQUQtc19VUVNMQkVjNlhDbzhhZGdEUDNEcWs5aFA3aFlxblg2cWdseS1ucldPZ3M5ZG5QRzA4MEozRkVHeG11d1E?oc=5",
+     "source": "Revista ProActivo",
+     "date": "2026-11-09T14:36:46.000Z"
+    },
+    {
+     "title": "Andes Maq Perú en Congreso Minería 5.0 y Excelencia Operacional 2026 - Minart | Portal de Noticias ✓",
+     "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQd0ZHSjRFejN3cUFWMlREcmdIX0NFRFRFR3p5Rk9uamZNUVdxYWZSSUdiYi05cnlDMGhQSl9xcjkzRm5xTUNxVlBXUjJfdVVNU1RaeGEyQlpCR25PZThjTWdVdWtMM2ctUXdmVmlCalkxdzdIeGZYdFAtR2xwWGhldkdpOUlBMHVtUHNkcVVMcVdvZGFOWG5zZkN6VlZKaXM?oc=5",
+     "source": "Minart | Portal de Noticias ✓",
+     "date": "2026-11-09T14:01:11.000Z"
+    },
+    {
+     "title": "Ya está en circulación la edición 587 de la revista MINERÍA - Instituto de Ingenieros de Minas del Perú - IIMP",
+     "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBLUnJJWEo0R3hqX2FiRkYtRTllVi1jMUROa2pqVi00V19xbnR5Ym9Jb0trYXdQbzhTNFh6Y1Uwc1NIYVpPa0g5X3A3WTFJa0hEenlV?oc=5",
+     "source": "Instituto de Ingenieros de Minas del Perú - IIMP",
+     "date": "2026-11-08T17:03:01.000Z"
+    },
+    {
+     "title": "Arequipa: Centro de investigación biomédica de la UNSA alcanza un avance del 30 % - Rumbo Minero",
+     "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOOS1DbnprRVhuZWJTNlRvcGtTUS1HZnJTVXE4a0pRcWY1cTZvdFhDaE5NajF1d1lpeHFYWFlxOGY2dTF0N2twTTZlVTVoUDRmUFMxYm1mcTZ1SjVCWkVyT3NzZEg5dWl1UGY5SDhIYWtBV1VvMUdmQlRuSFRPUGVMeHU1dzJCUW1OY1BBb3FheWJzVjh3aHZaU2ZTOFphNTNHdlE?oc=5",
+     "source": "Rumbo Minero",
+     "date": "2026-11-09T16:51:53.000Z"
+    },
+    {
+     "title": "CEIM acerca tecnologías de entrenamiento minero a universitarios de Perú - Portal Minerí­a Chilena",
+     "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOQWRZSjF1U1ZyZVA5R3JJLWdFM1h6QXJpdmhHQXIweHMxVXR5Y1pjRG1qT0toOW9KYUl6ZVNKcnY4alJxdjQyVW92MkluYmYySTd2aXNaOU5pdWhvRnFXTU9RV3pPQlJJOTFXNUZEUGc3WkpSZzI3U2RLNlhyY2hBd0lGMWRtelZDMEhKTW1nbVd1WXc1YkJJ?oc=5",
+     "source": "Portal Minerí­a Chilena",
+     "date": "2026-11-09T15:41:50.000Z"
+    },
+    {
+     "title": "Buenaventura y el Perú dan el campanazo en Wall Street - www.desdeadentro.pe",
+     "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPQklmMWx2MXBMSldLWGpwNTdDb3AxU3U3dVZNVVFTSm01NkJKMFBIS29zVXpGQ0J0VVpad252OXU1bG4zWnc5RTIzWWVqSTNvbXNLZ0hSTlo2enNqRDhmMDg5dkZ6WHhkNTNhS2RKb2FxQUswbmZFTDM1amM0OThxVXZzYUJhWTZ5amoteWJRVjhfQUJVZmc?oc=5",
+     "source": "www.desdeadentro.pe",
+     "date": "2026-11-09T17:23:15.000Z"
+    }
+   ]
+  },
+  "robotica": {
+   "title": "Robótica",
+   "items": [
+    {
+     "title": "NVIDIA presenta GR00T 2 para que los robots aprendan a partir de videos de personas - Unite.AI",
+     "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQQUg5RUZkSElCQ1VabU10c1htS1BZcDFlTklVZmpEanBIR1JDWjkxSTNlZGhDUXEwOG16cHBvTm9rUEJsbno1V2w4RkJwMTliOWZCc3FIc3RldU9NT1ViLTNaTzU5djczaTVNaEpVTi1DQ29OWkh5R3FORjRmcnowWVNRZUFWMjY0R3plMElSQmk?oc=5",
+     "source": "Unite.AI",
+     "date": "2026-11-09T14:39:03.000Z"
+    },
+    {
+     "title": "Los robots van a la escuela - Revista Q",
+     "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9iNWRsc3U1T0tPaGNuNklWNmNBRkY2Mld0dnJJbnhrZVBDX2VVS0gwaEwxU1NFLUlpMXhuUkpYUmk4RjNkaFVvc0xXbmN0dThSa05HbFhrb0laWjh5WWpvMVBFbkRfMnZ1eFNr?oc=5",
+     "source": "Revista Q",
+     "date": "2026-11-09T11:00:51.000Z"
+    },
+    {
+     "title": "Apple revela HALO, un Mac mini con Qwen controla un robot Unitree G1 sin conexión - Pasquale Pillitteri",
+     "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQM0lxOXNRcl9nTDRlQ1R1TE8xMFROR1pPZjBBWlhydjJGcWtONW16UTdLOVVJX3hRamFWWGtJMlVDdWNMRWFwNGZjZ3pldGtWZGJFaDBHUnc0Ulc2enIwWFNvSm5HeDF2SkV0eEVwUmdDQzZ2ZnBWWkhqWXBiSTdHMmFSS2dJb0Q4c0pERTVrcHNxZw?oc=5",
+     "source": "Pasquale Pillitteri",
+     "date": "2026-11-09T08:40:45.000Z"
+    },
+    {
+     "title": "Hi-WBC de X-Humanoid lleva el control corporal a los Tiangong - Foro3D",
+     "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQc0E2cUtZMXNreXh2RC1uSlM5bTJhQ1pGRmE3VG8xdzFhZWpFZVpRREhlM0htVFZpUkdjdG1JUlZZNTFnZVZnMWRPWDVvY1cwUFJpbHVLNWZDQXpYYmpUdXlyWmdsYjNSQlpfaHZmdGFoRTA1N0dUWkE0cWp2cmVRLU5oSC1DcjIzOGY2R0p0Mm12ZFdUMG1MSVMxVUNhNlJmMnc?oc=5",
+     "source": "Foro3D",
+     "date": "2026-11-09T08:16:11.000Z"
+    },
+    {
+     "title": "James Bruton pone a pelear dos aspiradoras Henry entrenadas con IA - MechatronicStore",
+     "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNNHFBZy0tT3RMeUNDZDBIWXltNXpjWFVKVzI4ZXBLY0tPVlMzX1NIeXVveXd5M3lWM1hJZ1RvS3h0aTlkaU1fazJjdGRiUzUyQmJlUXR3UTFtc3FpY05jdzdrQXk0WDVUTnZqdWZVTVd5VC1oOW96ZkpLaWdKNHRFTG9UUi1BTFYtOW5jRnRJbFh1NUg5VGhQNUpOby1DMTRGY1NLY1RpTzl2d043MmNwNDl3?oc=5",
+     "source": "MechatronicStore",
+     "date": "2026-11-08T22:22:34.000Z"
+    },
+    {
+     "title": "Hanwha invierte 50 millones en LionRobotics: así funciona la inversión corporativa robot en Corea - Merca2.es",
+     "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPVS1vS0dkOUFEdXYwd2JsME9lSXlXeWNMOWpsMjVnSDYtSEZma0MtZHBwM2djUWZwYWJvT2E1QmRCd2tYVllxYWwxc0ZkRkxIWFVwWnBDOFRuWFhudU10Si1jZHY0TC02VUVqbHBjTDRyQi1pZjhJS3AzLW5WLUtoM1VmMDliWnJlbWRZaTZIZzh5Wnc?oc=5",
+     "source": "Merca2.es",
+     "date": "2026-11-08T22:36:00.000Z"
+    },
+    {
+     "title": "Salesforce reporta 42% menos cómputo al destilar expertos de IA entrenados con aprendizaje por refuerzo - DiarioBitcoin",
+     "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNSjZHYVptUGpoR3ozV2VLbkxLTnhMQUVsZjRubmt0eXY5eHlJNTlvbk5Ya1NzMElScnNVWVNhd2xjQlREd3c0UF91YXBGVzRPZFRmVVRWWVhqZnVYZWhLa0d4T2RpVVJsSmRQNm1VZU9KNFlKNFBGTlVfVENtRG1ab09lcnVCelByQTNSbWR1djJ5WXhib3JSVXJKczBOSGluX2R0MWRHdktBUFo2OFBBZEh0LWlaSGVpaGxHVGhtTXdUWlJhZm1kM2psZDVWRXhraEVKcDNfWU54ekRQ?oc=5",
+     "source": "DiarioBitcoin",
+     "date": "2026-11-08T02:49:10.000Z"
+    },
+    {
+     "title": "Google añade TPU 8Tx y TPU 8I Max a su línea de octava generación - Unite.AI",
+     "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOMjI4Vm5LNmZFUzgxRl9fclBCWWpxVGJXOVpWVWxBZUlESWl5ZkFuVmV3RU5hcGsyNUZqTzlSdWRpZDlURUQtYXVta1htS0ZLbmd1d1JmWnVSSVVYLThaVGJDZjRneVFkdjNqdl85WWM3SUh5NnMweUZUNlpraFFYSjRCYTBydlZBR2h3cGxPWEQ?oc=5",
+     "source": "Unite.AI",
+     "date": "2026-11-09T13:27:04.000Z"
+    }
+   ]
+  },
+  "tecnologia": {
+   "title": "Tecnología",
+   "items": [
+    {
+     "title": "Director de Nvidia reconoce relación extramatrimonial tras revelarse presunta relación con una espía china: lo que se sabe del caso - RPP Noticias",
+     "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQUmt0QXh0LU9LM0g3cTF4ZnU1ZTVnaHNOenNrLU9QV09QMTlTVFowUHFmMENNNzRveThnUk5JRlFwUVc5VmRFZ2h0T29sR2hkNEpQT0Q4WUxrbXdLcmtHWHBNYjZ5ck9ueFhMZzhnaUN5WU9Kb2R3SzhHX2p4cUxqbFhndHZQUVE2d3pFRVBGam9zcVlEYlZDRWhkTk05S3pJcTZfQzY0SXIzMG9zQ09XNGdSNjQ3XzBvV0I1cEVB?oc=5",
+     "source": "RPP Noticias",
+     "date": "2026-11-09T03:20:28.000Z"
+    },
+    {
+     "title": "Cómo el extraordinario crecimiento de la \"escandalosamente barata\" energía solar ha desafiado todas las proyecciones - BBC",
+     "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFB5Zmcwc3JNaUFSSmRkTWhMYWhxcUVoRFdvTmFPUEpXbnhlWTQtbTVsbl9VNXl6S0hjc196REtuemZYaVFlRC1TMHNYM245VjNoZHVMRWx5U3pZUEZI0gFiQVVfeXFMT1pFVmI4VmFYYUJSV1RSYUc5NkRZbjJ1OHNYRGdxRzVlNlBwS0s3MjBBMkhOeVB3UUEwVmhqUG9wdy12UnFxTGFsanJubjJSQkN3aUNGUWFfc01sX2w2MDBsd3c?oc=5",
+     "source": "BBC",
+     "date": "2026-11-09T11:46:54.000Z"
+    },
+    {
+     "title": "Muerte de José Miguel Castro queda sin aclararse porque fiscal no revisó celular - Perú 21",
+     "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOdDdVSC1BLXZaWTBGTjBweXZ0V0JyUllsWnZJc0xMOHFycjFpckFQOExobEVmaTlqR3ZFNkJxdFFOMzlPMkg5bXRmSzFBbVNtWUZMUXhzS1dub25HUVhtYVlPMm4zekRSX1hQSVhQZ2tGM3Z6eTVLbzR6TS1XWjUzMTV2TDlWZGJFQUV1bEp0VTFxQl9CSS1GT0VxMkpNSm5OalJZSA?oc=5",
+     "source": "Perú 21",
+     "date": "2026-11-09T12:15:54.000Z"
+    },
+    {
+     "title": "Gobierno aprueba decreto legislativo que permite a FF. AA. reforzar la seguridad externa de los penales - RPP Noticias",
+     "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPdlFwRkJMbWEzejZXX25yR1pOMjdKOFdxMXZmWnN4RFlCMFpWeE5MdUEwalZvcmtwR0dkOTVNc1NpUU9rNTBrUGdCaGQyYjRWaUNveTgwcVQ4NGlraUtTZHluWV9pUWlNbVphUGNtSUo1Y1ZDTk9oSWp0M2oxcVdJM2tPNzdXTWNrWXhSeVRoUXJLZTVac0pfaXcwcUNVUERYV2ltYlpILTFtY19XZjV1eFpVQ2x6THQ4SlFFN2dFeE9GbERJdjZQcU1R?oc=5",
+     "source": "RPP Noticias",
+     "date": "2026-11-08T14:43:23.000Z"
+    },
+    {
+     "title": "Keiko Fujimori: “Las cifras muestran que estamos yendo en el camino indicado” - El Comercio Perú",
+     "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQNU1HYkxfc1JlQndUNl9ya19BaWxWTDZ3cWtoOWszNWE2T2k0cmNjS0xiczAxT2t2Tmt3SERmeUdYUGJvRXNTbHUzTWVoNHBVM2QwNXVqeWJmZmNDeXdzdE9QVTJkWEhnU1VPZHMwb2c3ZkgyVVdVZ3dqeEVGYURwZl9WTGl6dnRsSkVzN0RQQlhiY0pFXzZUYzdZekpLSGV2Y2U3RVkxZmg3aVlaWUx1MnBKV0U5N3l1QjZuRWFyV3dHT0M0eE5BdFd0SjN1Y1FoWXVMWDd0YmpSYnNJLXpVQ01lMnI2QdIB-gFBVV95cUxNVEZiVm9SSDFZWmJfSXdPTFA5dDhlSXZYUXM4UUxjbTFwNEdfMWY1TVZwVXItY1FDSWVHSTRqTmI5ajJWRFkyZnFFZ3F4S1dHajk1ZkJwT3hadnExbTkzQ2kxakpNTGFOYWhmZEVCejNfTTVEMndkdlVWNE9rZEpTQ3lISjNUZ09pU0MxRjZBRG15aTdLOUU1V0NrZk9lREtyTG1yMl90cUdSVGJqWlhNeDUtWGVnS3BlaE9CNm9zbzJZanlvbXg5Um42cUFDc2tiSjhJUDZLWC16YVlvTVIwbXcwOEd4UlpDS0R3MkxTTjBKbTRRa3lZT19B?oc=5",
+     "source": "El Comercio Perú",
+     "date": "2026-11-09T00:40:23.000Z"
+    },
+    {
+     "title": "Los nervios por la IA refuerzan una lección de inversión tan antigua como vigente: diversifique - CNN en Español",
+     "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPOEV4UEJqSjU4b0JvUWdJNzVkR2RXaEk3VjhKNWl1c2g1RTc3VV9FMjE5UHBkeV9CRGk3WkNTSlhzT2NFRTRlMzBjTTkyaWNOTFRKUE16QzdOZzd4TkdfQ2FScHZsaU01Ulh1RGlLcVo4clZ6NzhsSmhZbXBNeTF0a3VVZ0h4N0Q1THZyRDhBNExNZ1YxYVlEZ1FiTQ?oc=5",
+     "source": "CNN en Español",
+     "date": "2026-11-08T10:59:00.000Z"
+    },
+    {
+     "title": "Quién es Federico Vázquez, el banquero millenial que construyó un imperio financiero y derribó al presidente de Paraguay en tres días - Clarin.com",
+     "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPWkxVUmdlZ2xZY2Zfek1TTjlNeXo2OVI3c1NfSGRhQi1NRXdaR1lZODhTVzRFUFZSZldYWTE4UWtJbGthOHRuY1Q5T0s0NlZBclB5elllMV9NZk9XeV81TnlYZ1ptYXpHUzUyMTd6dVJFSjVJVDhKUmNjSnZXTi1lTFhUR3ktS1hFZFFvVTdOQkprUXhMcmtXV2xJYVAzRlNWakxtYjU5TkR0cUZHTk0tZTFWWFJhWVU4cGJnOF9VRnkwZ1p2blphRUpxV0lTWWNwU2NfOGNoSXExUFdr?oc=5",
+     "source": "Clarin.com",
+     "date": "2026-11-08T09:01:22.000Z"
+    },
+    {
+     "title": "Los Olivos: policía captura a hombre que robó celular a joven pasajera en plena Panamericana Norte - Exitosa Noticias",
+     "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPSFlTYjE5LWVyLWtmaWtiX25FZDJ3NXpkdlIwc01NZzROeTR2c0JVOTdrMkw4akNBXzJpT01HS2JmZFFVcXI5eExXVlMxY3EyTmZKbnZoWldlcmZzZk1NZVYzZGJjZnlpYUFjcEJGVkpwZDg5czM3OGJKTU1VR041UmZxTzdURUJUeklQWWZZSkR1OFBqUmVSVGJGZzFCeVdRMm5TMGVIdHluV2ZqSjFPYVlVR21heW8yY0NKTmVfUnl2Sm1PalR4dDRJVnNPR08xOXc?oc=5",
+     "source": "Exitosa Noticias",
+     "date": "2026-11-09T07:05:00.000Z"
+    }
+   ]
+  },
+  "vibraciones": {
+   "title": "Vibraciones",
+   "items": [
+    {
+     "title": "Domino presenta la impresora CIJ Ax560i con funciones de mantenimiento predictivo - Interempresas Media",
+     "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNRm5kMFdfRmo5NnB3bDVka3hmLWF4UDVHLVJ0SXBDaF93Sms1eVZqcTEtalhlel9UNW1idTJtMXBCb0pDbkdWZGVxeFh6eGVpOHg3VWpDLUxfWVQwbWZNcnBVdHd6a0xTMWpiM2ZqWF92Yk84eThWUlpYSEVKMjU0ZmVXbm05ajFPS1JTc1JiX1VsLUxpdUFWT2dBVVlOYkVPTy1WdUNpamNTWlFJRTBvcVZRS3NTY2x1aW9FX0tJVWRINzhPdm5ubGZYejZodw?oc=5",
+     "source": "Interempresas Media",
+     "date": "2026-11-04T11:41:19.000Z"
+    },
+    {
+     "title": "Mantenimiento predictivo por corrientes para la seguridad hídrica de la industria química pesada - TecnoAqua",
+     "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNWWdzSDN1SEhnZUdJa0x3RFV3azdJYjhCemRGVWtPOXpjSkJpYU1xTHBrcjZqelFqSXdDQlNzM3ByTGthM3ZCNGlkaVpPV0dSTHJ4VDlXV2doN2g5VkNaNFFfQ092WEtYbEk1UEZ5cXFLVElFMEtfNUNJMFFTY1F2MFJIYjRLcHBudFFCRDRXWm4zOWZ4bDRraVV4TV9MSVVFVDNFeHlsVkQwcTFoOW44UVh1RUs?oc=5",
+     "source": "TecnoAqua",
+     "date": "2026-11-02T23:06:18.000Z"
+    },
+    {
+     "title": "Honeywell Aerospace y Fly Across concluyen l... - BNamericas",
+     "link": "https://news.google.com/rss/articles/CBMimwJBVV95cUxQMUlSaG53N1Fhd3QzN3Uxa1RxemIzU2tZQ0pCTTc3UC1qVXlvbUxoUF9POVhNRzNjSmMwUV9rckxBMno0OExwZ3h6MHhxdXQyeGt3QTRXYnFHOUoxNk41OTVuTzlJWDA3N0l1WTFWTnFoUmM2UWNLYmpFV1VpbDRrekVtTHFXbmxiOEYtRnJTSTI4SG9pTXc0UEhzelZLdEoxLVAwM2ZBbkdCUkhjbzNMMEVyajZRZ2JzR0JVRHpFZ3paVVUwT0tjX0pWOVpIODNqRXlqb1pmY2FHSElWclp6VkNuRW9KY0NmV251N0lneVc2OUJTSDcxa2RfQ00wbm5Rc3ZwdGVuSzM5elZ1OTRNa0w1ZFJsb2Vibl9r?oc=5",
+     "source": "BNamericas",
+     "date": "2026-11-05T20:07:30.000Z"
+    },
+    {
+     "title": "IA en la industria - ActuIA",
+     "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBsNUNzTnhGTEx0cjkxelh1Nkx0Tks5NVVSZVhtcllRS1BxNDRVNmd2eHJfelY5blRSXzZlb3g1eWdTd3gzNG45RTJIZ3lMa3JCdHJGLS02WQ?oc=5",
+     "source": "ActuIA",
+     "date": "2026-11-04T08:00:00.000Z"
+    },
+    {
+     "title": "Más allá del mantenimiento predictivo: el impacto real de la conectividad - Interempresas Media",
+     "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOQmQxbktqa2RTLXRrQmtCQUZCTXVIeDdvdEFIdzR3bWFSRUR3SWVKdDN2emMxUzItR2hJeEg5aGo4VDNjRVpIOFFiLWNXZEYxWmxSdl9XNU9fV25LVWwwMjNtMXVfcjkzOWZGaEprWnNpcWxCSGtmMWdMMjBEUjg2WmwzOTJEMGstbk5kRFNqdlNtRzVrdG9tRkFycWJkdXFFREVVb1lxNkd1ekptOXJ5elhqRjZpTUFvbEp6WmRwZFI0RGozeDFxWTNVbDBUVDZ2aXQ0?oc=5",
+     "source": "Interempresas Media",
+     "date": "2026-11-08T23:00:53.000Z"
+    },
+    {
+     "title": "TMB despliega mantenimiento predictivo en el metro de Barcelona: trenes auscultadores y cámaras contra averías - Merca2.es",
+     "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQcmdoQzlpazFBNndNblVNSWx0LXZwY1ppdVN4cmxSMmtUYVpsdldEWm80S1RxWVNhRzM0ZVYyTUVRZzhNNDVrMmR1X25zVmtJa2dGUUNULXk5OXZyQ3h1WExkeUhWZjFpN1FIQjNsUUdIakZqU0xQVzY2T2E0VWJpa3FPSkNjSWV4OXc?oc=5",
+     "source": "Merca2.es",
+     "date": "2026-11-05T07:53:12.000Z"
+    },
+    {
+     "title": "XCMG destaca la innovación internacional en el concurso \"IA + Maquinaria de Construcción\" - TradingView",
+     "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQUExUNVNyaEkyU3FOQzdZLWRVMlF4TkFyekhnaFAyeWtjMGRCZm9GRzVtVVBwYk5NWW1URi1sZzl3eVR4b1ZPaEZRNjJiVGZjUTF2RDFTbkZFWlQzX3BMUk94TC04MzFyUDZkY1J6MV9mOUFOUFB2TFItX3hRU21JYlI5R1FCdw?oc=5",
+     "source": "TradingView",
+     "date": "2026-11-06T18:16:00.000Z"
+    },
+    {
+     "title": "La BLET se armará de tecnología en Córdoba: IA, 5G soberano y mantenimiento predictivo para la logística militar - Diario Córdoba",
+     "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNUWY1T2pteU1GM1JKazdqVFF3TTdETV9tODMzVFFHZ1dfTXp3QlROTVEwTmh4YTQ1VHdnN256RF9UQ1ZUaDBHMmcyYmh2QTRpMjFUSUFLUFNNR19KbU42WHJUc0NwdFdrV19YbE1Ic2VrZXEtU1JvamdVWXJfS3ZqeG9JVDIyaHI2NVB4ZHlib2lLVGRCVFJtbFprbEhrRFJhU1B4MWFtNNIBrAFBVV95cUxNUlZHY19qczRCTFNwSG9QR1E0azBsVmFxemk5SWhjLUlfWG53Ykl0Ymo2czVvUnRyVlRKVV9GcERFY1NSbkhzUzZVaDFVbEN0UXpSUmZXRnYxR0dPTzd6U2dpX0FRaXAyVlV4U1o2ZjF2QVBSdjZPMTdFd1ZyV0luazlwUWFCeVI2S1RwMzk0UENMRGJVak1xNHpXdkJrTnl3V1RSbllwRmhubG45?oc=5",
+     "source": "Diario Córdoba",
+     "date": "2026-11-03T13:49:12.000Z"
+    }
+   ]
+  },
+  "proyectos": {
+   "title": "Mis proyectos",
+   "items": [
+    {
+     "title": "Honduras: gasolinas bajarán más de US$0.16 por galón desde el lunes 9 de noviembre - Infobae",
+     "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPTVBHdVVrR1R5bFdRckVVdzBSZGNLT2EtLTFEOG9CcndzUHNzTzRkQk5CZm9mOXdfdHNzUG13aTA1X2VGdHE4SzB0dnVZQ3FWTzFYTkdpYVZteGN5eUxUUEgtSERhbzJsREtaOHRFX1h3Wmx2MktCbFFUMXVJZmtHcEktWlBQTHZNUFlHckc3OEJOX2NYWEY2bDIxOFZtS0daMFNqM1J2Y0U2N09aSmExM2FZaXdzLXNZd0NUUWR6U1lqa1cxVXZnZ3Y3NWo5cGhOaUNRNzRVU2ZqVzRG0gHcAUFVX3lxTE9NUEd1VWtHVHlsV1FyRVV3MFJkY0tPYS0tMUQ4b0Jyd3NQc3NPNGRCTkJmb2Y5d190c3NQbXdpMDVfZUZ0cThLMHR2dVlDcVZPMVhOR2lhVm14Y3l5TFRQSC1IRGFvMmxES1o4dEVfWHdabHYyS0JsUVQxdUlma0dwSS1aUFBMdk1QWUdyRzc4Qk5fY1hYRjZsMjE4Vm1LR1owU2ozUnZjRTY3T1pKYTEzYVlpd3Mtc1l3Q1RRZHpTWWprVzFVdmdndjc1ajlwaE5pQ1E3NFVTZmpXNEY?oc=5",
+     "source": "Infobae",
+     "date": "2026-11-08T02:24:00.000Z"
+    },
+    {
+     "title": "PARAFINA ANOTA FUERTE ALZA DE $51 POR LITRO DESDE ESTE JUEVES MIENTRAS BENCINAS Y DIÉSEL MANTIENEN SUS PRECIOS - Vilas Radio",
+     "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOTnAxSzMxNHVFZjNCaGF1VTZDaENTNDV1VFdjSWJDVWZNR0JjYnZwNDE2TnlWSGNuM3poQTh2UVpQZnNTc3lfSEdkTi1ueDJlakVnLU5qVENkT3BKTWFrR1FUcXhFampXbjhKTmJ1ZmhNSGF6RU1SbHMyN0J4NC1CNTZxclBkUlMwY29EalBqcTBVV21uSWwyakl0czVKblhHNzlkcTVvYzJlMFA1b2M5anRjVkl4d1JfVVdoTG1YVHo2c0h1T1dHSk12SlE?oc=5",
+     "source": "Vilas Radio",
+     "date": "2026-11-05T11:35:05.000Z"
+    },
+    {
+     "title": "¡Alivio al bolsillo! Gasolinas bajarán más de L4: así quedan los precios a partir del lunes 9 de noviembre - Diario Tiempo de Honduras",
+     "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNTWdfTE1LdGFESUNuYkJDUnQweDd3eGJVWjk3YWY3NklZcTVaZm9pU1RpLWFMZk1WLUk5dmVsa3hjR0xkRXFydndkamJCMkRQSGY5WEo4TEo5Y3BndWY3Q19yYTN1V25ZSnhiMGtLZTFlWWlybTA5OTdtVWJRWE1tbEgyT2dxQ25Sd1RrZklR?oc=5",
+     "source": "Diario Tiempo de Honduras",
+     "date": "2026-11-07T19:50:05.000Z"
+    },
+    {
+     "title": "¡Alivio al bolsillo! Combustibles bajarán más de L4 mientras el diésel seguirá firme en su precio - Noticias 24/7",
+     "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQUWdMMHdDUmdGeWRMUTdQVF92Y2ZVU2x5UWZiZ3F1RDJOb1hLd2NLaFBZRWVWdkYyaDVyT2xqbmY0ZGwxRkNMMmJiOXJvWjFOREJqRUowY3dfcXdqNDRjSTdjQkRZbEpyZE5CTnJGYm1EOTdic0tZeHJNTWRqTERVdklYVGtHTjZNWld4b1k0cDJaQXFWb3RyanluQksxd1JTTlBZeVcyN0Q0QVNVQjNQZ01sTWJQdmZicFpoRFNkdG8?oc=5",
+     "source": "Noticias 24/7",
+     "date": "2026-11-07T17:38:46.000Z"
+    },
+    {
+     "title": "Gasolinas bajan en Honduras: Así quedan los precios desde el lunes 9 de noviembre - Radio HRN",
+     "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOV2VOeERhUEdXU0J3UFg0aVNyMW9ReWpub0xwejRKY1dIR1FRV2RkMzJGZml6eGtzVDU4TlVoY09vZW90MW1YVzdkbXowbDZuOHQxZU1xR3ZhUWYybFFGa3BuQjVUVWdlWTY3RkcwZGt4VEgxc09wOW9WeTRRUFhMdHBoTGlsejBqdzZYUG1pZGdWR0dMY29KRUJhU3cyMUxzQVVuQy1ESV9iaUVMRFhPWGs5cXVKUQ?oc=5",
+     "source": "Radio HRN",
+     "date": "2026-11-07T17:42:42.000Z"
+    },
+    {
+     "title": "Precio del combustible en Honduras vigente del 12 al 18 de junio de 2023 - Televicentro",
+     "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPSUcydVVkeTFONTFoRmU0WFhQdklEeGZCQzBuUjhTYWNMNUFrWGhUV2JtR01TNHpHelEzSS1PX3RiOHpkaW1HdDM2MjRXVjlvalVOWG8wamFoc0pSaWROSVJsNktnVnNOYU5aQms2b2Z0YzdJNWpfNTFHODNIZmFpVjVQTEtLWW45VFpMaWNta3ZTWENqTVpuNUM4a1BkZ3l0SDlF?oc=5",
+     "source": "Televicentro",
+     "date": "2026-11-02T19:43:00.000Z"
+    },
+    {
+     "title": "Precio de los combustibles en Honduras: nuevas rebajas desde el 9 de noviembre - oncenoticias.hn",
+     "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOQkZaQlNQLVdDUTFzS3Q0eHQxRU5RYWlvVkJ4czM0Zmd2NExockJfMHpPLTRUZ2doUE9xZXdVbE0tYzd1aUhzYUV1T2w1RDJtM3d2bW5tVmtvcVJYaTZGZjYxZk1rM1pWemQ3NjBYODJXamVnTzhzZnlGaFJuVW1SR2ZhbHYxdHht?oc=5",
+     "source": "oncenoticias.hn",
+     "date": "2026-11-07T19:33:29.000Z"
+    },
+    {
+     "title": "Precio de los combustibles a partir del lunes 28 de octubre - Televicentro",
+     "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOWUdLalI0Rl91TTJEOC0wS2gyU1U3QS16SWhOMXlBV1ZkcmNTdUdFZFdiNFdpcmlvQmRkaElUMUFoR3FTOTN3MnMzOUJhbTdxekRmdTdwVDRqSEIyOUJ5N204N0JDd05Na0REbFAya0pfLWVUaXYxSnV4dWF5dDhFeGViNVhuWHVIZFF2a1hyak5IQQ?oc=5",
+     "source": "Televicentro",
+     "date": "2026-11-02T19:43:00.000Z"
+    }
+   ]
+  }
+ }
 }
