@@ -746,16 +746,24 @@
   $('#askForm').addEventListener('submit', e => { e.preventDefault(); const i = $('#askInput'); const q = i.value; i.value = ''; ask(q); });
   $('#askChips').innerHTML = ['¿Qué me toca ahora?', '¿Cómo voy hoy?', '¿Cómo voy esta semana?', '¿Qué tengo mañana?', '¿Qué entregas tengo?', 'Aconséjeme'].map(c => `<button type="button" data-ask="${esc(c)}">${c}</button>`).join('');
   $('#askChips').addEventListener('click', e => { const b = e.target.closest('[data-ask]'); if (b) ask(b.dataset.ask); });
-  const micBtn = $('#askMic');
-  micBtn.hidden = !Assistant.canListen();
+  const micBtn = $('#askMic'), askIn = $('#askInput');
+  function micUI(st) {
+    const on = st === 'listening' || st === 'starting';
+    micBtn.classList.toggle('on', on);
+    micBtn.textContent = st === 'starting' ? '… ACTIVANDO' : st === 'listening' ? '● ESCUCHANDO (toque para terminar)' : '🎙 HABLAR';
+    if (st === 'listening') { $('#briefState').textContent = 'Le escucho, ' + (Store.state.settings.name || 'Frank Ramos') + '…'; askIn.placeholder = 'Hable ahora…'; Notify.beep(); }
+    if (!on) askIn.placeholder = 'Pregúntele a Jarvis: ¿qué me toca ahora?';
+  }
+  micBtn.hidden = false; // siempre visible: si el navegador no tiene dictado, explica qué hacer
   micBtn.onclick = () => {
-    Voice.stop();
+    Voice.stop(); $('#briefBtn').classList.remove('talking');
+    if (Assistant.busy()) { Assistant.stop(); return; }
     Assistant.listen({
-      onText: t => ask(t),
-      onState: (st, err) => {
-        micBtn.classList.toggle('on', st === 'listening');
-        micBtn.textContent = st === 'listening' ? '● ESCUCHANDO' : '🎙 HABLAR';
-        if (st === 'error') toast(err === 'not-allowed' ? 'Permita el micrófono para este sitio.' : err === 'network' ? 'El dictado necesita internet.' : 'No lo escuché. Inténtelo de nuevo.');
+      onPartial: t => { askIn.value = t; },
+      onText: t => { askIn.value = ''; ask(t); },
+      onState: (st, code, msg) => {
+        if (st === 'error') { micUI('idle'); askIn.value = ''; if (msg) { toast(msg); $('#briefState').textContent = msg; } if (code === 'unsupported' || code === 'service-not-allowed') askIn.focus(); return; }
+        micUI(st);
       },
     });
   };

@@ -277,21 +277,64 @@
     return `No tengo una respuesta para eso, ${who()}. Puedo decirle qué le toca ahora, cómo va, qué tiene mañana, sus entregas, exámenes, notas o puntos, y agregar o marcar actividades.${tip ? ' Mientras tanto: ' + tip.text : ''}`;
   }
 
-  // ---------- reconocimiento de voz (Chrome/Edge; necesita internet) ----------
+  // ---------- reconocimiento de voz ----------
+  // Motor 1: dictado de Chrome/Edge (necesita internet y permiso de micrófono).
+  // Motor 2 (opcional): uno externo registrado con Assistant.setEngine (p. ej. la vista de prueba en Claude).
   const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
-  let rec = null;
-  const canListen = () => !!SR && location.protocol !== 'file:';
-  function listen({ onText, onState }) {
-    if (!canListen()) return false;
-    if (rec) { try { rec.stop(); } catch { } return true; }
-    rec = new SR(); rec.lang = 'es-PE'; rec.interimResults = false; rec.maxAlternatives = 1;
-    let got = false;
-    rec.onresult = e => { got = true; onText?.(e.results[0][0].transcript); };
-    rec.onerror = e => onState?.('error', e.error);
-    rec.onend = () => { rec = null; onState?.(got ? 'done' : 'idle'); };
-    try { rec.start(); onState?.('listening'); } catch { rec = null; onState?.('error', 'start'); }
+  let rec = null, engine = null, langs = ['es-PE', 'es-419', 'es-ES'];
+  const canListen = () => !!engine || (!!SR && location.protocol !== 'file:');
+  const MSG = {
+    'not-allowed': 'Permita el micrófono: toque el candado junto a la dirección (o Ajustes del sitio) → Micrófono → Permitir, y vuelva a intentarlo.',
+    'service-not-allowed': 'Este navegador no permite el dictado aquí. Use el micrófono de su teclado (Gboard) en el cuadro de pregunta.',
+    'audio-capture': 'No detecto un micrófono. Revise que esté conectado y que Windows/Android le dé permiso a Chrome.',
+    'no-speech': 'No escuché nada. Pulse HABLAR y hable apenas suene el pitido.',
+    'network': 'El dictado necesita internet. Revise su conexión.',
+    'aborted': '', 'unsupported': 'Este navegador no tiene dictado. Abra JARVIS en Google Chrome o use el micrófono del teclado.',
+  };
+  async function micPermission() {
+    if (!navigator.mediaDevices?.getUserMedia) return null;
+    try {
+      const ask = navigator.mediaDevices.getUserMedia({ audio: true });
+      const st = await Promise.race([ask, new Promise((_, r) => setTimeout(() => r({ name: 'NotAllowedError' }), 25000))]);
+      st.getTracks().forEach(t => t.stop()); return null;
+    }
+    catch (e) { return e && e.name === 'NotFoundError' ? 'audio-capture' : e && (e.name === 'NotAllowedError' || e.name === 'SecurityError') ? 'not-allowed' : null; }
+  }
+  function stop() { if (engine) { engine.stop?.(); return; } if (rec) { try { rec.stop(); } catch { } } }
+  const busy = () => !!rec || !!engine?.active?.();
+  async function listen({ onText, onPartial, onState }) {
+    const fail = code => onState?.('error', code, MSG[code] ?? 'No pude usar el micrófono. Inténtelo de nuevo.');
+    if (engine) return engine.listen({ onText, onPartial, onState, fail });
+    if (!SR || location.protocol === 'file:') { fail('unsupported'); return false; }
+    if (rec) { stop(); return true; }
+    onState?.('starting');
+    const perm = await micPermission();
+    if (perm) { fail(perm); onState?.('idle'); return false; }
+    const run = li => {
+      rec = new SR(); rec.lang = langs[li]; rec.interimResults = true; rec.continuous = false; rec.maxAlternatives = 1;
+      let finalTxt = '', err = null;
+      rec.onstart = () => onState?.('listening');
+      rec.onresult = e => {
+        let interim = '';
+        for (let i = e.resultIndex; i < e.results.length; i++) {
+          const t = e.results[i][0].transcript;
+          if (e.results[i].isFinal) finalTxt += t; else interim += t;
+        }
+        onPartial?.((finalTxt + ' ' + interim).trim());
+      };
+      rec.onerror = e => { err = e.error; };
+      rec.onend = () => {
+        rec = null;
+        if (err === 'language-not-supported' && li + 1 < langs.length) { run(li + 1); return; }
+        if (finalTxt.trim()) { onState?.('done'); onText?.(finalTxt.trim()); }
+        else { if (err && err !== 'aborted') fail(err); else if (!err) fail('no-speech'); onState?.('idle'); }
+      };
+      try { rec.start(); } catch { rec = null; fail('aborted'); onState?.('idle'); }
+    };
+    run(0);
     return true;
   }
+  const setEngine = e => { engine = e; };
 
-  window.Assistant = { answer, listen, canListen };
+  window.Assistant = { answer, listen, stop, busy, canListen, setEngine, MSG };
 })();

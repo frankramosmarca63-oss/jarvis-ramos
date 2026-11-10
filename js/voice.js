@@ -23,15 +23,17 @@
   function speak(text, { onEnd } = {}) {
     if (!synth || !Store.state.settings.voice) { onEnd?.(); return false; }
     synth.cancel();
+    if (!voice) voice = pickVoice();
     const parts = chunks(text);
-    parts.forEach((p, i) => {
+    // Chrome a veces se queda mudo si se habla justo después de cancelar: se espera un instante
+    setTimeout(() => parts.forEach((p, i) => {
       const u = new SpeechSynthesisUtterance(p);
       if (voice) u.voice = voice;
       u.lang = voice?.lang || 'es-PE';
       u.rate = 1.02; u.pitch = 0.85;
-      if (i === parts.length - 1) u.onend = () => onEnd?.();
+      if (i === parts.length - 1) { u.onend = () => onEnd?.(); u.onerror = () => onEnd?.(); }
       synth.speak(u);
-    });
+    }), 80);
     return true;
   }
 
