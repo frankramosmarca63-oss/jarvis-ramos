@@ -49,7 +49,7 @@
   function saludo() { const h = new Date().getHours(); return h < 12 ? 'Buenos días' : h < 19 ? 'Buenas tardes' : 'Buenas noches'; }
 
   function greeting() {
-    const name = Store.state.settings.name || 'señor';
+    const name = Store.state.settings.name || 'Frank Ramos';
     const m = Metrics.day(today());
     const pending = m.total - m.done;
     if (!m.total) return `${saludo()}, ${name}. No hay actividades planificadas para hoy.`;
@@ -58,7 +58,7 @@
   }
 
   function briefingText() {
-    const s = Store.state.settings, name = s.name || 'señor';
+    const s = Store.state.settings, name = s.name || 'Frank Ramos';
     const n = new Date();
     const parts = [`${saludo()}, ${name}. Hoy es ${DAYS[n.getDay()]} ${n.getDate()} de ${MONTHS[n.getMonth()]}.`];
     const nv = News.forVoice();
@@ -109,6 +109,13 @@
     $('#newsList').innerHTML = newsItemsHtml(ui.newsTab);
     $('#trendList').innerHTML = newsItemsHtml(ui.trendTab);
     $('#newsStamp').textContent = News.data.generated ? `Actualizado ${new Date(News.data.generated).toLocaleString('es-PE', { weekday: 'short', hour: '2-digit', minute: '2-digit' })}` : '';
+
+    const hm = Metrics.day(today()), hp = Metrics.planning(addDays(today(), 1)), ht = Metrics.totals(), hw = Metrics.avgIndex(Metrics.range(7));
+    const kp = (k, l, v) => `<div class="bm"><span class="k">${k}</span><span class="l">${l}</span><div class="mini"><div style="width:${Math.round(Math.min(1, Math.max(0, v)) * 100)}%"></div></div></div>`;
+    $('#homeKpis').innerHTML = kp(hm.total ? pct(hm.index) : '—', `Índice de hoy · ${hm.done}/${hm.total} tareas`, hm.index) +
+      kp(pct(hw), 'Promedio 7 días · meta 70 %', hw) +
+      kp(hp.empty ? '—' : `${hp.score.toFixed(1)}/10`, 'Plan de mañana', hp.empty ? 0 : hp.pct) +
+      kp(`${ht.streak} d`, `Racha · ${ht.available} pts · nivel ${ht.level}`, ht.levelProgress);
 
     const tips = Advisor.tips();
     $('#tipsList').innerHTML = tips.length ? tips.slice(0, 6).map(t => `<li class="${t.level}">${esc(t.text)}</li>`).join('') : '<li>Todo en orden. Sigue con tu plan.</li>';
@@ -329,9 +336,9 @@
     // semana
     const data = Metrics.range(7);
     const W = 320, H = 170, padB = 24, padT = 16, gap = 10, bw = (W - gap * 8) / 7, ch = H - padB - padT;
-    let svg = `<defs><linearGradient id="wg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4ff3ff"/><stop offset="1" stop-color="#1aa9b8" stop-opacity=".35"/></linearGradient></defs>`;
+    let svg = `<defs><linearGradient id="wg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF8A1F"/><stop offset="1" stop-color="#E8257F" stop-opacity=".55"/></linearGradient></defs>`;
     const gy = padT + ch * (1 - Metrics.STREAK_GOAL);
-    svg += `<line x1="0" x2="${W}" y1="${gy}" y2="${gy}" stroke="rgba(255,200,87,.55)" stroke-dasharray="4 4"/>`;
+    svg += `<line x1="0" x2="${W}" y1="${gy}" y2="${gy}" stroke="rgba(255,200,87,.7)" stroke-dasharray="4 4"/>`;
     data.forEach((x, i) => {
       const X = gap + i * (bw + gap), h = Math.max(2, ch * x.index), y = H - padB - h;
       svg += `<rect class="bar-r" x="${X}" y="${y}" width="${bw}" height="${h}" rx="2" opacity="${x.total ? 1 : .25}"><title>${fmtDay(x.date)}: ${pct(x.index, 1)}</title></rect>`;
@@ -340,7 +347,7 @@
     });
     $('#weekChart').innerHTML = svg;
     const wAvg = Metrics.avgIndex(data);
-    $('#weekAvg').textContent = `Promedio semanal: ${pct(wAvg, 1)} · línea dorada = meta 70 %`;
+    $('#weekAvg').textContent = `Promedio semanal: ${pct(wAvg, 1)} · línea punteada = meta 70 %`;
 
     const month = Metrics.range(30), withPlan = month.filter(x => x.total);
     const best = withPlan.slice().sort((a, b) => b.index - a.index)[0];
@@ -354,6 +361,7 @@
       `<div class="muted small">${sum.done}/${sum.total} tareas · ${(sum.h / 60).toFixed(1)} h productivas${best ? ` · mejor día ${fmtDay(best.date)} (${pct(best.index)})` : ''}</div>`
       : '<div class="muted">Aún no hay historial.</div>';
 
+    renderTrend(month);
     renderMonthly();
 
     // recompensas
@@ -366,6 +374,34 @@
         ${st.state === 'ready' ? `<button class="xs gold" data-claim="${r.id}">CANJEAR</button>` : st.state === 'claimed' ? `<button class="xs" data-unclaim="${r.id}">REACTIVAR</button>` : '<span class="badge cyan">BLOQUEADA</span>'}
         <button class="xs" data-edit-reward="${r.id}">✎</button></span></li>`;
     }).join('');
+  }
+
+  // Tendencia de 30 días (índice y planificación, en %) y mapa del mes
+  function renderTrend(data) {
+    const W = 640, H = 230, L = 36, R = 10, T = 12, B = 26, cw = W - L - R, ch = H - T - B;
+    const X = i => L + (cw * i) / (data.length - 1), Y = v => T + ch * (1 - v);
+    let g = `<defs><linearGradient id="tg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FF8A1F"/><stop offset="1" stop-color="#E8257F"/></linearGradient>
+      <linearGradient id="ta" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF8A1F" stop-opacity=".35"/><stop offset="1" stop-color="#E8257F" stop-opacity="0"/></linearGradient></defs>`;
+    for (const v of [0, 0.5, 1]) g += `<line class="grid" x1="${L}" x2="${W - R}" y1="${Y(v)}" y2="${Y(v)}"/><text x="${L - 6}" y="${Y(v) + 4}" text-anchor="end">${v * 100}%</text>`;
+    g += `<line class="goal" x1="${L}" x2="${W - R}" y1="${Y(Metrics.STREAK_GOAL)}" y2="${Y(Metrics.STREAK_GOAL)}"/>`;
+    data.forEach((x, i) => { if (i % 5 === 0 || i === data.length - 1) g += `<text x="${X(i)}" y="${H - 8}" text-anchor="middle">${parseYmd(x.date).getDate()} ${MONTHS[parseYmd(x.date).getMonth()].slice(0, 3)}</text>`; });
+    const pts = data.map((x, i) => ({ i, x })).filter(o => o.x.total);
+    if (!pts.length) { $('#trendChart').innerHTML = g + `<text x="${W / 2}" y="${H / 2}" text-anchor="middle">Aún no hay días con actividades.</text>`; }
+    else {
+      const p1 = pts.map(o => `${X(o.i).toFixed(1)},${Y(o.x.index).toFixed(1)}`);
+      const p2 = pts.map(o => `${X(o.i).toFixed(1)},${Y(Metrics.planning(o.x.date).pct).toFixed(1)}`);
+      if (pts.length > 1) g += `<polygon fill="url(#ta)" points="${X(pts[0].i).toFixed(1)},${Y(0)} ${p1.join(' ')} ${X(pts[pts.length - 1].i).toFixed(1)},${Y(0)}"/><polyline class="l2" points="${p2.join(' ')}"/><polyline class="l1" points="${p1.join(' ')}"/>`;
+      g += pts.map(o => `<circle class="dot" cx="${X(o.i).toFixed(1)}" cy="${Y(o.x.index).toFixed(1)}" r="${o.i === data.length - 1 ? 4.5 : 2.6}"><title>${fmtDay(o.x.date)}: índice ${pct(o.x.index)} · planificación ${pct(Metrics.planning(o.x.date).pct)}</title></circle>`).join('');
+      $('#trendChart').innerHTML = g;
+    }
+    const n = new Date(), y = n.getFullYear(), m = n.getMonth(), nd = new Date(y, m + 1, 0).getDate(), off = (new Date(y, m, 1).getDay() + 6) % 7;
+    $('#heatTitle').textContent = `MAPA DE ${MONTHS[m].toUpperCase()}`;
+    let h = ['L', 'M', 'X', 'J', 'V', 'S', 'D'].map(d => `<div class="hd">${d}</div>`).join('') + '<div class="hd"></div>'.repeat(off);
+    for (let i = 1; i <= nd; i++) {
+      const d = `${y}-${pad(m + 1)}-${pad(i)}`, md = d <= today() ? Metrics.day(d) : null, has = md && md.total;
+      h += `<div class="${d === today() ? 'today' : ''}" title="${has ? pct(md.index) : d > today() ? '' : 'Sin actividades'}" style="${has ? `background:rgba(255,138,31,${(0.12 + 0.78 * md.index).toFixed(2)});border-color:transparent` : ''}">${i}</div>`;
+    }
+    $('#heatMap').innerHTML = h;
   }
 
   function renderMonthly() {
@@ -417,7 +453,7 @@
     $('#soundBtn').textContent = `SONIDO: ${Store.state.settings.sound ? 'ON' : 'OFF'}`;
     $('#voiceBtn').textContent = `VOZ: ${Store.state.settings.voice ? 'ON' : 'OFF'}`;
     const f = $('#settingsForm');
-    if (!f.contains(document.activeElement)) for (const k of ['name', 'remindBefore', 'briefingTime', 'planTime', 'morningPlanUntil', 'dailyGoalHours']) f.elements[k].value = Store.state.settings[k];
+    if (!f.contains(document.activeElement)) for (const k of ['name', 'remindEarly', 'remindBefore', 'briefingTime', 'planTime', 'morningPlanUntil', 'dailyGoalHours']) f.elements[k].value = Store.state.settings[k];
     const DN = ['D', 'L', 'M', 'X', 'J', 'V', 'S'];
     $('#mealList').innerHTML = Store.state.meals.slice().sort((a, b) => toMin(a.start) - toMin(b.start)).map(m => `<li><div class="grow">${esc(m.label)}<div class="sub">${m.start}–${m.end} · ${(m.days || []).length === 7 ? 'todos los días' : (m.days || []).map(d => DN[d]).join(' ')}</div></div><button class="xs" data-edit-meal="${m.id}">✎</button></li>`).join('') || '<li class="muted">Sin comidas registradas.</li>';
   }
@@ -425,7 +461,8 @@
   $('#settingsForm').addEventListener('submit', e => {
     e.preventDefault();
     const f = e.target.elements, s = Store.state.settings;
-    s.name = f.name.value.trim() || 'señor';
+    s.name = f.name.value.trim() || 'Frank Ramos';
+    s.remindEarly = Math.max(0, Math.min(180, Number(f.remindEarly.value) || 0));
     s.remindBefore = Math.max(0, Math.min(60, Number(f.remindBefore.value) || 0));
     s.briefingTime = f.briefingTime.value || '05:00';
     s.planTime = f.planTime.value || '21:30';
@@ -692,6 +729,37 @@
     else if (d.editMeal) editMeal(Store.state.meals.find(x => x.id === d.editMeal));
   });
 
+  // ============ pregúntale a Jarvis ============
+  const askLog = [];
+  function ask(q) {
+    q = String(q || '').trim(); if (!q) return;
+    let a;
+    try { a = Assistant.answer(q); } catch (e) { console.error(e); a = 'Tuve un problema al revisar sus datos. Inténtelo de nuevo.'; }
+    askLog.push({ q, a }); if (askLog.length > 3) askLog.shift();
+    $('#askLog').innerHTML = askLog.map(x => `<div class="q">${esc(x.q)}</div><div class="a">${esc(x.a)}</div>`).join('');
+    const orb = $('#briefBtn');
+    if (Voice.available() && Store.state.settings.voice) {
+      orb.classList.add('talking'); $('#briefState').textContent = 'Respondiendo… (toca el núcleo para detener)';
+      Voice.speak(a, { onEnd: () => { orb.classList.remove('talking'); $('#briefState').textContent = 'Pregúnteme lo que necesite'; } });
+    } else $('#briefState').textContent = 'Voz desactivada: actívela en AJUSTES → VOZ';
+  }
+  $('#askForm').addEventListener('submit', e => { e.preventDefault(); const i = $('#askInput'); const q = i.value; i.value = ''; ask(q); });
+  $('#askChips').innerHTML = ['¿Qué me toca ahora?', '¿Cómo voy hoy?', '¿Cómo voy esta semana?', '¿Qué tengo mañana?', '¿Qué entregas tengo?', 'Aconséjeme'].map(c => `<button type="button" data-ask="${esc(c)}">${c}</button>`).join('');
+  $('#askChips').addEventListener('click', e => { const b = e.target.closest('[data-ask]'); if (b) ask(b.dataset.ask); });
+  const micBtn = $('#askMic');
+  micBtn.hidden = !Assistant.canListen();
+  micBtn.onclick = () => {
+    Voice.stop();
+    Assistant.listen({
+      onText: t => ask(t),
+      onState: (st, err) => {
+        micBtn.classList.toggle('on', st === 'listening');
+        micBtn.textContent = st === 'listening' ? '● ESCUCHANDO' : '🎙 HABLAR';
+        if (st === 'error') toast(err === 'not-allowed' ? 'Permita el micrófono para este sitio.' : err === 'network' ? 'El dictado necesita internet.' : 'No lo escuché. Inténtelo de nuevo.');
+      },
+    });
+  };
+
   // ============ render ============
   const renderers = { inicio: renderInicio, hoy: renderHoy, plan: renderPlan, cursos: renderCursos, progreso: renderProgreso, ajustes: renderAjustes };
   function render() {
@@ -731,6 +799,6 @@
     document.addEventListener('visibilitychange', () => { if (!document.hidden) { Notify.tick(); News.load().then(scheduleRender); render(); } });
   }
 
-  window.App = { toast, render, show };
+  window.App = { toast, render, show, ask };
   boot();
 })();

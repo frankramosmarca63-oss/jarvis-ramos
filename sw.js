@@ -1,7 +1,7 @@
 /* Service worker: instalación como app, funcionamiento sin conexión y notificaciones push (Firebase). */
-const CACHE = 'jarvis-ramos-v3';
+const CACHE = 'jarvis-ramos-v4';
 const ASSETS = ['./', 'index.html', 'css/hud.css', 'js/firebase-config.js', 'js/store.js', 'js/metrics.js', 'js/study.js',
-  'js/seed.js', 'js/advisor.js', 'js/monthly.js', 'js/voice.js', 'js/notify.js', 'js/news.js', 'js/cloud.js', 'js/app.js',
+  'js/seed.js', 'js/advisor.js', 'js/monthly.js', 'js/voice.js', 'js/notify.js', 'js/news.js', 'js/cloud.js', 'js/assistant.js', 'js/app.js',
   'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png'];
 
 // Push con Firebase Cloud Messaging (solo si la nube está configurada)

@@ -28,7 +28,7 @@
       const days = Study.daysUntil(d);
       const scheduled = Store.state.tasks.some(t => t.pendingId === p.id);
       if (days < 0) add('alta', `La entrega "${p.title}" venció el ${d}. Márcala como hecha o descártala para mantener el plan limpio.`);
-      else if (days <= 2 && !scheduled) add('alta', `"${p.title}" vence en ${days === 0 ? 'hoy' : days + ' días'} y no tiene bloque agendado.`);
+      else if (days <= 2 && !scheduled) add('alta', `"${p.title}" vence ${days === 0 ? 'hoy' : days === 1 ? 'mañana' : 'en ' + days + ' días'} y no tiene bloque agendado.`);
       else if (days <= 7 && !scheduled) add('media', `Planifica con anticipación "${p.title}" (vence el ${d}).`);
     }
 

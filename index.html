@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#03080d">
+  <meta name="theme-color" content="#0A1238">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -58,6 +58,14 @@
           <div id="briefSummary" class="muted"></div>
         </div>
       </div>
+      <div class="home-kpis" id="homeKpis"></div>
+      <form class="ask" id="askForm" autocomplete="off">
+        <input id="askInput" maxlength="200" placeholder="Pregúntele a Jarvis: ¿qué me toca ahora?" aria-label="Pregunta para Jarvis">
+        <button type="button" class="btn ghost mic" id="askMic" hidden aria-label="Hablar con Jarvis">🎙 HABLAR</button>
+        <button type="submit" class="btn">PREGUNTAR</button>
+      </form>
+      <div class="ask-chips" id="askChips"></div>
+      <div class="ask-log" id="askLog" aria-live="polite"></div>
     </section>
 
     <section class="panel span-2">
@@ -94,8 +102,11 @@
         <svg viewBox="0 0 220 220" class="reactor" aria-label="Productividad del día">
           <defs>
             <radialGradient id="core" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#e6fdff"/><stop offset="35%" stop-color="#4ff3ff"/><stop offset="100%" stop-color="#03323a" stop-opacity="0"/>
+              <stop offset="0%" stop-color="#fff3e2"/><stop offset="35%" stop-color="#FF8A1F"/><stop offset="100%" stop-color="#E8257F" stop-opacity="0"/>
             </radialGradient>
+            <linearGradient id="fireG" gradientUnits="userSpaceOnUse" x1="10" y1="10" x2="210" y2="210">
+              <stop offset="0" stop-color="#FF8A1F"/><stop offset="1" stop-color="#E8257F"/>
+            </linearGradient>
           </defs>
           <circle cx="110" cy="110" r="100" class="ring-bg"/>
           <circle cx="110" cy="110" r="100" class="ring-val" id="ringMain" pathLength="100"/>
@@ -225,6 +236,19 @@
       <h2 class="mt">RESUMEN 30 DÍAS</h2>
       <div id="monthBox" class="breakdown"></div>
     </section>
+    <section class="panel span-2">
+      <div class="corner tl"></div><div class="corner br"></div>
+      <h2>TENDENCIA · ÚLTIMOS 30 DÍAS</h2>
+      <svg id="trendChart" viewBox="0 0 640 230" class="trend-chart" role="img" aria-label="Índice de productividad y nota de planificación de los últimos 30 días, en porcentaje"></svg>
+      <div class="legend"><span><i></i>Índice de productividad (%)</span><span><i class="b"></i>Planificación (%)</span><span><i class="w"></i>Meta 70 %</span></div>
+    </section>
+    <section class="panel">
+      <div class="corner tl"></div><div class="corner br"></div>
+      <h2 id="heatTitle">MAPA DEL MES</h2>
+      <div class="heat" id="heatMap"></div>
+      <div class="muted small mt">Más intenso = mayor índice del día.</div>
+    </section>
+
     <section class="panel span-all">
       <div class="corner tl"></div><div class="corner br"></div>
       <div class="plan-head">
@@ -271,7 +295,8 @@
       <div class="muted small" id="sysStatus"></div>
       <form id="settingsForm" class="form-grid mt">
         <label>Cómo te llama Jarvis<input name="name" maxlength="30"></label>
-        <label>Avisar antes (min)<input name="remindBefore" type="number" min="0" max="60"></label>
+        <label>Aviso anticipado (min antes)<input name="remindEarly" type="number" min="0" max="180"></label>
+        <label>Aviso final (min antes)<input name="remindBefore" type="number" min="0" max="60"></label>
         <label>Informe matutino<input name="briefingTime" type="time"></label>
         <label>Planificación nocturna<input name="planTime" type="time"></label>
         <label>Planificar al levantarse hasta<input name="morningPlanUntil" type="time"></label>
@@ -360,6 +385,7 @@
   <script src="js/notify.js"></script>
   <script src="js/news.js"></script>
   <script src="js/cloud.js"></script>
+  <script src="js/assistant.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

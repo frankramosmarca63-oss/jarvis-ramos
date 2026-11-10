@@ -1,7 +1,7 @@
 /* Envía las notificaciones push aunque la app esté cerrada.
    Corre cada 10 minutos (.github/workflows/recordatorios.yml). GitHub puede retrasar unos minutos
    las tareas programadas, por eso cada aviso tiene una ventana amplia y se envía una sola vez. */
-import { firebase, ref, push, ymd, addDays, toMin, span, tasksFor, mealsFor, monthSummary, admin } from './lib.mjs';
+import { firebase, ref, push, ymd, addDays, toMin, span, parseYmd, tasksFor, mealsFor, monthSummary, admin } from './lib.mjs';
 
 await firebase();
 const [mainSnap, serverSnap] = await Promise.all([ref('main').get(), ref('server').get()]);
@@ -11,7 +11,9 @@ const sent = serverSnap.data()?.notified || {};
 const s = state.settings || {};
 const now = new Date(), today = ymd(now), n = now.getHours() * 60 + now.getMinutes();
 const before = Number(s.remindBefore ?? 5);
-const name = s.name || 'señor';
+const name = s.name && s.name !== 'señor' ? s.name : 'Frank Ramos';
+const early = Number(s.remindEarly ?? 30) || 0;
+const lead = Math.max(before, 10); // el servidor corre cada 10 min
 const updates = []; // pares [FieldPath, valor]
 const FP = (...p) => new admin.firestore.FieldPath(...p);
 
@@ -25,7 +27,9 @@ async function once(key, title, body) {
 for (const t of tasksFor(state, today)) {
   if (t.doneAt) continue;
   const [st, en] = span(t.start, t.end);
-  if (n >= st - Math.max(before, 10) && n < en) {
+  if (early > lead && n >= st - early && n < st - lead) {
+    await once(`early|${t.key}`, `En ${st - n} min: ${t.title}`, `Empieza a las ${t.start}. Vaya preparándose, ${name}.`);
+  } else if (n >= st - lead && n < en) {
     await once(`start|${t.key}`, n < st ? `En ${st - n} min: ${t.title}` : `Ahora: ${t.title}`, `Bloque ${t.start}–${t.end}. ¡A trabajar, ${name}!`);
   } else if (n >= en && n < en + 60) {
     await once(`end|${t.key}`, `¿Completaste "${t.title}"?`, 'Márcala como hecha para registrar tu avance.');
@@ -60,6 +64,25 @@ if (now.getDate() === 1 && now.getHours() >= 8) {
     const mejora = r.index < 0.7 ? 'Por mejorar: subir el índice a la meta del 70 %.' : r.punct < 0.6 ? 'Por mejorar: puntualidad.' : r.night / r.n < 0.6 ? 'Por mejorar: planificar más noches.' : 'Gran mes, mantén el ritmo.';
     await once(`month|${key}`, `Informe mensual listo · índice ${P(r.index)}`,
       `Meta cumplida ${r.over}/${r.n} días · puntualidad ${P(r.punct)} · plan de noche ${r.night}/${r.n}. ${mejora} Toca para ver recomendaciones.`);
+  }
+}
+// 3d) Entregas (3 días, 1 día y el mismo día) y exámenes (7, 3, 1 y el mismo día), desde las 07:00
+if (n >= 7 * 60) {
+  const daysUntil = d => Math.round((parseYmd(d) - parseYmd(today)) / 864e5);
+  const when = d => d === 0 ? 'hoy' : d === 1 ? 'mañana' : `en ${d} días`;
+  const ps = state.pendingState || {};
+  const pend = [...(state.pendings || []), ...(serverSnap.data()?.pendings || [])].filter(p => p.due && !ps[p.id] && !p.turnedIn);
+  for (const p of pend) {
+    const d = daysUntil(p.due.slice(0, 10));
+    if (![3, 1, 0].includes(d)) continue;
+    const sched = (state.tasks || []).some(t => t.pendingId === p.id);
+    await once(`due|${p.id}|${today}`, `Entrega ${when(d)}: ${p.title}`, sched ? 'Ya tiene un bloque agendado para avanzarla.' : 'Aún no tiene bloque agendado. Resérvele tiempo hoy.');
+  }
+  for (const sub of state.subjects || []) for (const e of sub.exams || []) {
+    if (!e.date) continue;
+    const d = daysUntil(e.date);
+    if (![7, 3, 1, 0].includes(d)) continue;
+    await once(`exam|${e.id}|${today}`, `${e.name} de ${sub.name} ${when(d)}`, d > 1 ? 'Agende sus repasos con tiempo.' : 'Último repaso y a descansar bien.');
   }
 }
 // 4) Planificación nocturna (se repite 1 h después si aún no hay plan para mañana)

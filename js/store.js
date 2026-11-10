@@ -17,7 +17,7 @@
     notified: {},     // avisos locales ya mostrados
     planLog: {},      // "YYYY-MM-DD" -> ISO en que se confirmó el plan de ese día
     briefed: {},      // "YYYY-MM-DD" -> ISO en que se escuchó el informe
-    settings: { sound: true, voice: true, name: 'señor', remindBefore: 5, briefingTime: '05:00', planTime: '21:30', morningPlanUntil: '09:00', dailyGoalHours: 6 },
+    settings: { sound: true, voice: true, name: 'Frank Ramos', remindEarly: 30, remindBefore: 5, briefingTime: '05:00', planTime: '21:30', morningPlanUntil: '09:00', dailyGoalHours: 6 },
     // Horario de alimentación: bloques fijos, aparte de las tareas (no cuentan en la productividad)
     meals: [
       { id: 'm1', label: 'Desayuno', start: '07:00', end: '07:30', days: [0, 1, 2, 3, 4, 5, 6] },
@@ -38,6 +38,7 @@
   function migrate(data) {
     const d = defaults();
     const out = { ...d, ...data, version: 2, settings: { ...d.settings, ...(data.settings || {}) } };
+    if (!out.settings.name || out.settings.name === 'señor') out.settings.name = 'Frank Ramos'; // así pidió que lo llame Jarvis
     // recompensas v1 no tenían id ni condición semanal
     out.rewards = (out.rewards || []).map((r, i) => ({ id: r.id || 'r' + (i + 1), minWeek: 0.7, claimed: null, ...r }));
     for (const k of ['tasks', 'meals', 'subjects', 'topics', 'pendings']) if (!Array.isArray(out[k])) out[k] = d[k];
